@@ -73,54 +73,6 @@ a{color:var(--brand);text-decoration:none}
 .typed-accent{color:var(--brand);font-weight:800}
 .cursor{display:inline-block;color:var(--brand);width:1ch;animation:blink 1s steps(1,end) infinite}
 @keyframes blink{0%,100%{opacity:0}50%{opacity:1}}
-/* ——— Skills badges ——— */
-/* ——— Skills: horizontal chips with logos ——— */
-.skill-chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  list-style:none;
-  padding:0;
-  margin:24px 0 0;
-}
-
-.skill-chips li{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 14px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:999px;
-  box-shadow:var(--shadow);
-}
-
-.chip-icon{
-  display:grid;
-  place-items:center;
-  width:36px; height:36px;
-  flex:0 0 36px;
-  border-radius:999px;
-  background: radial-gradient(120% 120% at 30% 20%, #fbe1c7 0%, #e6b593 30%, #d28d6a 60%, #9a6e59 100%);
-  box-shadow: 0 6px 16px rgba(0,0,0,.22);
-  overflow:hidden;
-}
-
-.chip-icon img{
-  width:20px; height:20px; display:block;
-}
-
-.chip-icon .mono{
-  display:none;
-  font-weight:800;
-  color:#fff;
-  font-size:12px;
-  letter-spacing:.03em;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
-
-.chip-text{ font-weight:600 }
-
 /* ——— Skills: horizontal chips ——— */
 .skill-chips{
   display:flex;
@@ -128,7 +80,7 @@ a{color:var(--brand);text-decoration:none}
   gap:12px;
   list-style:none;
   padding:0;
-  margin:24px 0 0;
+  margin:12px 0 0;
 }
 
 .skill-chips li{
@@ -155,7 +107,7 @@ a{color:var(--brand);text-decoration:none}
 
 .chip-icon img{ width:20px; height:20px; display:block; }
 
-/* monogram inside the circle (used when there is no logo image) */
+/* monogram inside the circle (used when no logo image) */
 .chip-icon .mono{
   font-weight:800;
   color:#fff;
@@ -165,4 +117,3 @@ a{color:var(--brand);text-decoration:none}
 }
 
 .chip-text{ font-weight:600 }
-
