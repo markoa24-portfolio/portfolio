@@ -56,10 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // edit these to whatever you want to rotate
   var phrases = [
-    'Welcome to my portfolio :)',
-    'Aerospace Engineering Student @ UCLA',
-    'Design · Build · Launch'
-  ];
+  'Welcome to my portfolio :)',
+  'Aerospace Engineering Student @ UCLA',
+  'Design · Build · Launch'
+];
+
 
   var typeMS = 60;    // per character while typing
   var eraseMS = 40;   // per character while deleting
