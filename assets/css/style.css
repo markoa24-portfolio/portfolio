@@ -73,3 +73,39 @@ a{color:var(--brand);text-decoration:none}
 .typed-accent{color:var(--brand);font-weight:800}
 .cursor{display:inline-block;color:var(--brand);width:1ch;animation:blink 1s steps(1,end) infinite}
 @keyframes blink{0%,100%{opacity:0}50%{opacity:1}}
+/* ——— Skills badges ——— */
+.skill-badges{
+  --min: 220px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+  gap:16px 20px;
+  list-style:none;
+  padding:0;
+  margin:24px 0 0;
+}
+
+.skill-badges li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:var(--surface, rgba(255,255,255,0.04));
+  border:1px solid var(--line, rgba(255,255,255,0.08));
+  padding:12px 14px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.10);
+}
+
+.skill-badges .badge{
+  display:grid;
+  place-items:center;
+  width:44px; height:44px;
+  border-radius:999px;
+  background: radial-gradient(120% 120% at 30% 20%, #fbe1c7 0%, #e6b593 30%, #d28d6a 60%, #9a6e59 100%);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+  font-size:22px;
+  line-height:1;
+  flex:0 0 44px;
+}
+
+.skill-badges span{font-weight:600}
+.small{font-size:.92rem}
