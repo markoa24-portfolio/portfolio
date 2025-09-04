@@ -68,3 +68,8 @@ a{color:var(--brand);text-decoration:none}
 .typed-accent{color:var(--brand);font-weight:800}
 .cursor{display:inline-block;color:var(--brand);width:1ch;animation:blink 1s steps(1,end) infinite}
 @keyframes blink{0%,100%{opacity:0}50%{opacity:1}}
+
+/* Typed title */
+.typed-accent{color:var(--brand);font-weight:800}
+.cursor{display:inline-block;color:var(--brand);width:1ch;animation:blink 1s steps(1,end) infinite}
+@keyframes blink{0%,100%{opacity:0}50%{opacity:1}}
