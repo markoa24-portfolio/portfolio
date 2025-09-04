@@ -74,36 +74,82 @@
   </section>
 
   <!-- 02 · SKILLS (new) -->
-  <section id="skills" class="section" data-reveal>
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">02 — Skills</p>
-        <h2 class="sec">Tools &amp; Capabilities</h2>
-        <p class="muted">Quick scan: round badges + clear labels. No images required.</p>
-      </div>
-
-      <ul class="skill-badges">
-        <!-- CAD / Analysis -->
-        <li><span class="badge" role="img" aria-label="SolidWorks">🧰</span><span>SolidWorks — CAD &amp; assemblies</span></li>
-        <li><span class="badge" role="img" aria-label="MATLAB">🧮</span><span>MATLAB</span></li>
-        <li><span class="badge" role="img" aria-label="ANSYS">🌀</span><span>ANSYS</span></li>
-        <li><span class="badge" role="img" aria-label="GD&T">📏</span><span>GD&amp;T</span></li>
-        <li><span class="badge" role="img" aria-label="DFM">🏗️</span><span>DFM &amp; manufacturing planning</span></li>
-
-        <!-- Systems / Build -->
-        <li><span class="badge" role="img" aria-label="Electrical integration">🔌</span><span>Electrical integration</span></li>
-        <li><span class="badge" role="img" aria-label="Test planning">🧪</span><span>Test planning &amp; data analysis</span></li>
-        <li><span class="badge" role="img" aria-label="Welded assemblies">🔧</span><span>Welded assemblies &amp; fabrication</span></li>
-        <li><span class="badge" role="img" aria-label="Fixtures">🧱</span><span>Fixtures &amp; hardware design</span></li>
-        <li><span class="badge" role="img" aria-label="Systems integration">🧭</span><span>Systems integration</span></li>
-      </ul>
-
-      <p class="muted small" style="margin-top:16px">
-        Also comfortable with: jig/fixture design, release hygiene, BOMs, wiring harnesses, relay/solenoid circuits,
-        push-to-start systems, basic FEA.
-      </p>
+ <section id="skills" class="section" data-reveal>
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">02 — Skills</p>
+      <h2 class="sec">Tools & Capabilities</h2>
+      <p class="muted">Tight, horizontal chips with real logos where available.</p>
     </div>
-  </section>
+
+    <ul class="skill-chips">
+      <!-- Logos: show image if present; fall back to monogram automatically -->
+      <li>
+        <span class="chip-icon" data-label="SW">
+          <img src="images/skills/solidworks.svg" alt="SolidWorks" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="mono">SW</span>
+        </span>
+        <span class="chip-text">SolidWorks</span>
+      </li>
+
+      <li>
+        <span class="chip-icon" data-label="ML">
+          <img src="images/skills/matlab.svg" alt="MATLAB" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="mono">MATLAB</span>
+        </span>
+        <span class="chip-text">MATLAB</span>
+      </li>
+
+      <li>
+        <span class="chip-icon" data-label="AN">
+          <img src="images/skills/ansys.svg" alt="ANSYS" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="mono">ANSYS</span>
+        </span>
+        <span class="chip-text">ANSYS</span>
+      </li>
+
+      <li>
+        <span class="chip-icon" data-label="OR">
+          <img src="images/skills/openrocket.svg" alt="OpenRocket" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="mono">OpenRocket</span>
+        </span>
+        <span class="chip-text">OpenRocket</span>
+      </li>
+
+      <li>
+        <span class="chip-icon" data-label="ARD">
+          <img src="images/skills/arduino.svg" alt="Arduino" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="mono">Arduino</span>
+        </span>
+        <span class="chip-text">Arduino</span>
+      </li>
+
+      <li>
+        <span class="chip-icon" data-label="FEA">
+          <!-- usually no single logo: use monogram -->
+          <span class="mono" style="display:block">FEA</span>
+        </span>
+        <span class="chip-text">Finite Element Analysis</span>
+      </li>
+
+      <li>
+        <span class="chip-icon" data-label="SAP">
+          <img src="images/skills/sap.svg" alt="SAP" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="mono">SAP</span>
+        </span>
+        <span class="chip-text">SAP</span>
+      </li>
+
+      <li>
+        <span class="chip-icon" data-label="GD">
+          <!-- monogram works well here -->
+          <span class="mono" style="display:block">GD&amp;T</span>
+        </span>
+        <span class="chip-text">GD&amp;T</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
   <!-- 03 · PROJECTS -->
   <section id="projects" class="section" data-reveal>
