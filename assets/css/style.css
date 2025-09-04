@@ -120,3 +120,49 @@ a{color:var(--brand);text-decoration:none}
 }
 
 .chip-text{ font-weight:600 }
+
+/* ——— Skills: horizontal chips ——— */
+.skill-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  list-style:none;
+  padding:0;
+  margin:24px 0 0;
+}
+
+.skill-chips li{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);
+  border-radius:999px;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+}
+
+.chip-icon{
+  display:grid;
+  place-items:center;
+  width:36px; height:36px;
+  flex:0 0 36px;
+  border-radius:999px;
+  background: radial-gradient(120% 120% at 30% 20%, #fbe1c7 0%, #e6b593 30%, #d28d6a 60%, #9a6e59 100%);
+  box-shadow: 0 6px 16px rgba(0,0,0,.22);
+  overflow:hidden;
+}
+
+.chip-icon img{ width:20px; height:20px; display:block; }
+
+/* monogram inside the circle (used when there is no logo image) */
+.chip-icon .mono{
+  font-weight:800;
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.03em;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.chip-text{ font-weight:600 }
+
