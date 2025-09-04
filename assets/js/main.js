@@ -1,76 +1,95 @@
-// year
-const y = document.getElementById('y');
-if (y) y.textContent = new Date().getFullYear();
+/* ---------- utility: current year ---------- */
+(function () {
+  var y = document.getElementById('y');
+  if (y) y.textContent = new Date().getFullYear();
+})();
 
-// theme toggle
-const root = document.documentElement;
-const saved = localStorage.getItem('theme');
-if (saved === 'light') root.classList.add('light');
-const themeBtn = document.getElementById('theme-toggle');
-if (themeBtn) {
-  themeBtn.onclick = () => {
-    root.classList.toggle('light');
-    localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
-  };
-}
+/* ---------- theme toggle (persisted) ---------- */
+(function () {
+  var root = document.documentElement;
+  var saved = localStorage.getItem('theme');
+  if (saved === 'light') root.classList.add('light');
+  var btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+    });
+  }
+})();
 
-// smooth scroll
-document.addEventListener('click', (e) => {
-  const a = e.target.closest('a[href^="#"]');
+/* ---------- smooth scroll for hash links ---------- */
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href^="#"]');
   if (!a) return;
-  const id = a.getAttribute('href').slice(1);
-  const el = document.getElementById(id);
-  if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+  var id = a.getAttribute('href').slice(1);
+  var el = document.getElementById(id);
+  if (el) {
+    e.preventDefault();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 });
 
-// reveal on scroll
-const io = new IntersectionObserver((ents)=>ents.forEach(en=>{
-  if (en.isIntersecting){ en.target.classList.add('reveal-in'); io.unobserve(en.target); }
-}), {threshold:.12});
-document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+/* ---------- reveal-on-scroll ---------- */
+(function () {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-reveal]').forEach(function (el) {
+      el.classList.add('reveal-in');
+    });
+    return;
+  }
+  var io = new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.classList.add('reveal-in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+})();
 
-/* -------------------------
-   Typed hero title (rotate)
--------------------------- */
-(function typedHero(){
-  const el = document.getElementById('typed');
+/* ---------- TYPED HERO TITLE (robust + simple) ---------- */
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('typed');
   if (!el) return;
 
-  // rotate these phrases (edit freely):
-  const phrases = [
-    "Aerospace Engineer",
-    "Mechanical Design Engineer",
-    "Systems-minded Builder",
-    "Design · Build · Test"
+  // edit these to whatever you want to rotate
+  var phrases = [
+    'Aerospace Engineer',
+    'Mechanical Design Engineer',
+    'Systems-minded Builder',
+    'Design · Build · Test'
   ];
 
-  const typeSpeed = 60;     // ms per char
-  const eraseSpeed = 40;    // ms per char
-  const holdTime  = 1100;   // pause when a word is complete
+  var typeMS = 60;    // per character while typing
+  var eraseMS = 40;   // per character while deleting
+  var holdMS  = 1100; // pause when a word completes
 
-  let i = 0, j = 0, typing = true;
+  var i = 0;          // phrase index
+  var j = 0;          // char index
+  var typing = true;  // typing or deleting
 
-  function tick(){
-    const current = phrases[i];
+  function tick () {
+    var current = phrases[i];
 
-    if (typing){
+    if (typing) {
       el.textContent = current.slice(0, j + 1);
       j++;
-      if (j === current.length){
+      if (j === current.length) {
         typing = false;
-        setTimeout(tick, holdTime);
-        return;
+        return setTimeout(tick, holdMS);
       }
-      setTimeout(tick, typeSpeed);
+      return setTimeout(tick, typeMS);
     } else {
       el.textContent = current.slice(0, j - 1);
       j--;
-      if (j === 0){
+      if (j === 0) {
         typing = true;
         i = (i + 1) % phrases.length;
       }
-      setTimeout(tick, eraseSpeed);
+      return setTimeout(tick, eraseMS);
     }
   }
   tick();
-})();
+});
