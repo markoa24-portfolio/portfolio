@@ -56,10 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // edit these to whatever you want to rotate
   var phrases = [
-    'Aerospace Engineer',
-    'Mechanical Design Engineer',
-    'Systems-minded Builder',
-    'Design · Build · Test'
+    'Welcome to my portfolio :)',
+    'Aerospace Engineering Student @ UCLA',
+    'Design · Build · Launch'
   ];
 
   var typeMS = 60;    // per character while typing
