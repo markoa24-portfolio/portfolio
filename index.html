@@ -1,1 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mark Agban — Engineering Portfolio</title>
+  <meta name="description" content="Mark Agban — Mechanical/Aerospace design portfolio. Go-kart build, high-power rocket, porous airfoil research." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header glass">
+  <div class="container">
+    <a class="brand" href="#about">Mark Agban</a>
+    <nav class="nav">
+      <a href="#about" class="u-underline">About</a>
+      <a href="#projects" class="u-underline">Projects</a>
+      <a href="#experience" class="u-underline">Experience</a>
+      <a href="resume.html" class="u-underline">Resume</a>
+      <a href="#contact" class="u-underline">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☼</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- 1 · ABOUT -->
+  <section id="about" class="section hero" data-reveal>
+    <div class="container">
+      <p class="eyebrow">01 — About</p>
+      <h1 class="hero-title">I design & build hardware — <span class="accent">CAD → cuts → welds</span>.</h1>
+      <p class="lead">
+        I’m <strong>Mark Agban</strong> (B.S. Aerospace Engineering, UCLA). I like taking a concept to something you can drive, test, and maintain:
+        design-for-manufacture, clean packaging, and clear build docs. Current focus: a custom <strong>live-axle go-kart</strong> with a square-tube
+        weldment chassis, 212&nbsp;cc electric-start engine, 30-series TAV, and a custom push-to-start.
+      </p>
+      <p class="muted">
+        Core: SolidWorks (weldments/assemblies/drawings), GD&amp;T basics, tolerance stackups · DFM & process planning · basic FEA/MATLAB ·
+        drivetrain alignment & chainline, steering/brake geometry, and electrical integration.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn outline" href="mailto:markagban@gmail.com">Email</a>
+        <a class="btn outline" target="_blank" href="https://www.linkedin.com/in/mark-agban-7501b7245/">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · PROJECTS -->
+  <section id="projects" class="section" data-reveal>
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">02 — Projects</p>
+        <h2 class="sec">Selected Work</h2>
+        <p class="muted">A few builds and studies. More details inside each card.</p>
+      </div>
+
+      <div class="grid projects-grid">
+        <!-- 1) Go-Kart -->
+        <a class="card project" href="projects/go-kart.html">
+          <div class="thumb" style="background-image:url('images/go-kart-thumb.jpg');"></div>
+          <div class="card-body">
+            <h3>Custom Go-Kart (live axle)</h3>
+            <p>Square-tube weldment chassis, 212&nbsp;cc ES, 30-series TAV, in-house fab with custom push-to-start.</p>
+            <div class="tags"><span>mechanical</span><span>DFM</span><span>CAD</span></div>
+          </div>
+        </a>
+
+        <!-- 2) High-Power Rocket (group) -->
+        <a class="card project" href="projects/rocket.html">
+          <div class="thumb" style="background-image:url('images/rocket-thumb.jpg');"></div>
+          <div class="card-body">
+            <h3>High-Power Rocket (group)</h3>
+            <p>Airframe/fin-can & recovery integration; manufacturing plan and flight-readiness docs.</p>
+            <div class="tags"><span>aero</span><span>structures</span><span>systems</span></div>
+          </div>
+        </a>
+
+        <!-- 3) USC Viterbi Porous Airfoil -->
+        <a class="card project" href="projects/usc-porous-airfoil.html">
+          <div class="thumb" style="background-image:url('images/shine-poster.png');"></div>
+          <div class="card-body">
+            <h3>Porous Airfoil Flow Study (USC Viterbi)</h3>
+            <p>Varying porous-hole spacing/angle on NACA 0012; CAD, ANSYS, water-channel tests.</p>
+            <div class="tags"><span>aerodynamics</span><span>research</span><span>CAD</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · EXPERIENCE -->
+  <section id="experience" class="section" data-reveal>
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">03 — Experience</p>
+        <h2 class="sec">Where I’ve worked</h2>
+      </div>
+
+      <div class="grid xp-grid">
+        <div class="card"><div class="card-body">
+          <h3>Haas Automation</h3>
+          <p class="role">Mechanical/Shop Engineering Intern</p>
+          <ul>
+            <li>HID card–controlled access (reader → controller → relay → solenoid) for secured machines.</li>
+            <li>Brackets/fixtures; routed & labeled wiring; operator & sustainment documentation.</li>
+          </ul>
+        </div></div>
+
+        <div class="card"><div class="card-body">
+          <h3>Lamsco West</h3>
+          <p class="role">Manufacturing Engineering Intern</p>
+          <ul>
+            <li>Spec-driven checks; drawing/manufacturing plan reviews; supported nonconformance closure.</li>
+            <li>Proposed fixturing/routing tweaks to reduce scrap and rework.</li>
+          </ul>
+        </div></div>
+
+        <div class="card"><div class="card-body">
+          <h3>USC Viterbi — Porous Airfoil</h3>
+          <p class="role">Research</p>
+          <ul>
+            <li>SolidWorks porous patterns; ANSYS 2D cross-section sims; water-channel testing.</li>
+            <li>Compiled figures & results into final poster (inline on project page).</li>
+          </ul>
+        </div></div>
+
+        <div class="card"><div class="card-body">
+          <h3>UCLA DCP</h3>
+          <p class="role">Lead Accessibility Engineer</p>
+          <ul>
+            <li>Scaled PDF remediation (headings, reading order, alt text) with QA to raise pass rates.</li>
+            <li>Reusable guides/standards for technical content.</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · CONTACT -->
+  <section id="contact" class="section" data-reveal>
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">04 — Contact</p>
+        <h2 class="sec">Let’s talk</h2>
+        <p class="muted">I’m open to chats, feedback, and build reviews.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="mailto:markagban@gmail.com">markagban@gmail.com</a>
+        <a class="btn outline" target="_blank" href="https://www.linkedin.com/in/mark-agban-7501b7245/">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="y"></span> Mark Agban</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
 
