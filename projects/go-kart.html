@@ -4,12 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Custom Go-Kart — Mark Agban</title>
-  <meta name="description" content="From-scratch kart: Lifan 212 cc electric-start with push-to-start, 30-series torque converter, live axle, and a square-tube A513 weldment chassis. Cut-list workflow and in-house fabrication (chop saw & angle grinder)." />
+  <meta name="description" content="From-scratch kart: Lifan 212 cc electric-start with push-to-start, 30-series torque converter to a live axle, and a 1×1×.120″ A513 square-tube chassis. Built in-house on a tight budget using a chop saw and angle grinder." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <style>
+    /* Page helpers */
     .hero-tight{padding-top:120px}
     .media{border:1px solid var(--line);border-radius:12px;background:#0e1116}
     .video-wrap{aspect-ratio:16/9;display:grid;place-items:center;color:var(--muted)}
@@ -17,16 +18,15 @@
     .chips span{border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.04)}
     .two-col{display:grid;grid-template-columns:1.15fr 1fr;gap:28px}
     @media (max-width: 900px){.two-col{grid-template-columns:1fr}}
-    .specs{display:grid;grid-template-columns:repeat(2,minmax(200px,1fr));gap:10px 18px;margin:10px 0 2px}
-    .specs dt{font-weight:700;color:var(--muted)}
-    .specs dd{margin:0}
     figure{margin:16px 0}
     figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0e1116}
     figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
-    .callout{border:1px dashed var(--line);border-radius:12px;padding:14px;background:rgba(255,255,255,.03)}
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     @media (max-width:960px){.gallery{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:640px){.gallery{grid-template-columns:1fr}}
+    .callout{border:1px dashed var(--line);border-radius:12px;padding:14px;background:rgba(255,255,255,.03)}
+    .issue{border-left:3px solid #e6b34f;padding-left:12px;margin:8px 0}
+    .fix{border-left:3px solid #62d2a2;padding-left:12px;margin:8px 0}
     ul.tight>li{margin:6px 0}
   </style>
 </head>
@@ -56,7 +56,7 @@
         <!-- OPTION 1 — local mp4 (when ready) -->
         <!-- <video controls src="../images/projects/go-kart/build.mp4" style="width:100%;height:100%;border-radius:12px"></video> -->
 
-        <!-- OPTION 2 — YouTube embed (replace VIDEO_ID) -->
+        <!-- OPTION 2 — YouTube (replace VIDEO_ID) -->
         <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="Go-kart build" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
 
         <!-- Placeholder until you add the video -->
@@ -65,120 +65,198 @@
     </div>
   </section>
 
-  <!-- OVERVIEW (one paragraph; only facts from your notes) -->
+  <!-- OVERVIEW (one paragraph; no "cut-list" wording) -->
   <section class="section" data-reveal>
     <div class="container">
       <p class="lead" style="max-width:980px">
-        From-scratch single-seat kart using a <strong>Lifan 212&nbsp;cc electric-start</strong> with a custom <strong>push-to-start</strong> tied into the Lifan harness, a <strong>30-series torque converter</strong> to a <strong>live axle</strong>, and a <strong>1×1×.120″ A513 square-tube</strong> weldment chassis. The build follows a <strong>cut-list workflow</strong> and a budget-first plan fabricated in-house with a <strong>chop saw</strong> and <strong>angle grinder</strong> (outsourcing quotes were too high).
+        From-scratch single-seat kart built around a <strong>Lifan 212&nbsp;cc electric-start</strong> with a custom <strong>push-to-start</strong> tied into the Lifan harness,
+        a <strong>30-series torque converter</strong> driving a <strong>live axle</strong>, and a <strong>1×1×.120″ A513 square-tube</strong> chassis. The build is budget-first and done
+        in-house with a <strong>chop saw</strong> and <strong>angle grinder</strong>, both to avoid high outsourcing quotes and to develop hands-on manufacturing skills.
       </p>
 
       <div class="chips">
-        <span>Lifan 212 cc ES</span><span>Push-to-Start</span><span>30-series TAV</span><span>Live Axle</span><span>1×1×.120 A513</span><span>Cut-List</span><span>In-house Fabrication</span>
+        <span>Lifan 212 cc ES</span><span>Push-to-Start</span><span>30-series TAV</span><span>Live Axle</span>
+        <span>Square-Tube A513</span><span>In-House Fabrication</span>
       </div>
     </div>
   </section>
 
-  <!-- DESIGN DECISIONS & WHY (verbatim reasons from your notes) -->
+  <!-- STORY / STAR-FLOW (mirrors your doc; no extra claims) -->
   <section class="section" data-reveal>
     <div class="container two-col">
       <div>
-        <h2 class="sec">Design Decisions &amp; Why</h2>
+        <h2 class="sec">Project Story</h2>
 
-        <h3>Round → Square Tube</h3>
+        <h3>Situation &amp; Goal</h3>
+        <p>
+          Build a reliable first kart from scratch on a student budget, document the process, and end with something we can start, drive, and maintain.
+        </p>
+
+        <h3>Direction</h3>
+        <p>
+          Non-shifter 4-stroke for simplicity and safety on the first build. Live axle with a 30-series TAV for predictable launches and low maintenance.
+        </p>
+
+        <h3>Key Decisions — and Why</h3>
         <div class="callout">
-          Switched from circular DOM/ERW to <strong>1.00″ × 1.00″ × 0.120″ (11&nbsp;GA) A513</strong> square tubing.<br>
-          <strong>Why:</strong> eliminates tube bending; simpler fabrication (cut + weld); easier jigging and alignment. <em>(Notes: ordered 6 bars @ 10&nbsp;ft = 60&nbsp;ft total; cut-list required ≈477&nbsp;in ≈39.8&nbsp;ft, leaving ≈20&nbsp;ft margin.)</em>
+          <strong>Round → Square tubing:</strong> moved to <em>1×1×.120″ A513 square</em> to avoid tube bending, keep cuts repeatable, make jigging/alignment straightforward, and stay on budget.<br>
+          <strong>Engine swap → Lifan 212 cc ES:</strong> considered Predator 212 but electric-start conversion adds parts, cost, and time. Lifan comes electric-start out-of-the-box, supports a clean push-to-start, and matches the typical 3/4″ keyed shaft/bore patterns we needed.
         </div>
 
-        <h3>Engine Change → Lifan 212 cc (Electric-Start)</h3>
-        <div class="callout">
-          Originally considered Predator 212. Converting it to electric-start would have required a ring-gear flywheel, starter motor, battery system, shroud mods, and possibly crank machining — adding cost, time, and risk. <br>
-          <strong>Chosen:</strong> <em>Lifan 212&nbsp;cc Electric-Start</em> because it comes with ES pre-installed, has the same shaft diameter and bolt pattern as the Predator (3/4″ keyed), delivers similar HP/torque, supports a starter switch/Arduino later, and fits the simple, budget-friendly, beginner-ready goal.
-        </div>
+        <h3>Actions</h3>
+        <ul class="tight">
+          <li>Modeled the frame as a square-tube weldment; generated drawings for tube cuts and basic brackets.</li>
+          <li>Laid out the drivetrain for live-axle use with a 30-series TAV to #420 chain.</li>
+          <li>Integrated a push-to-start into the Lifan harness with battery, fusing, relay, and kill-switch to ground ignition.</li>
+          <li>Fabricated in-house using chop saw + angle grinder; tack, check, and weld sequence planned to control distortion.</li>
+        </ul>
+
+        <h3>Results / Status</h3>
+        <ul class="tight">
+          <li>Chassis tube prep completed; welding/assembly in progress.</li>
+          <li>Push-to-start verified on the bench; harness mounting/loom in progress.</li>
+          <li>TAV alignment issue identified and corrected with spacers and a slotted bracket (details below).</li>
+        </ul>
       </div>
 
       <div>
-        <h3 class="sec">Key Specs</h3>
-        <dl class="specs">
-          <dt>Powerplant</dt><dd>Lifan 212 cc (electric-start)</dd>
-          <dt>Start Circuit</dt><dd>Custom push-to-start integrated with Lifan harness</dd>
-          <dt>CVT</dt><dd>30-series torque converter</dd>
-          <dt>Final Drive</dt><dd>Chain → live axle</dd>
-          <dt>Chassis</dt><dd>1×1×.120″ A513 square-tube weldment</dd>
-        </dl>
+        <h3 class="sec">At-a-Glance</h3>
+        <figure>
+          <img src="../images/projects/go-kart/engine.jpg" alt="Lifan 212 cc engine (placeholder)">
+          <figcaption>Lifan 212&nbsp;cc ES chosen for integrated starter + harness support.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/tav.jpg" alt="30-series TAV on engine (placeholder)">
+          <figcaption>30-series torque converter driving #420 chain to the live axle.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- CHASSIS (cut-list driven; weld/assemble in-house) -->
+  <!-- CHASSIS (design + space for CAD, drawings, welding, cutting, grinding) -->
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="sec">Chassis &amp; Cut-List Workflow</h2>
+      <h2 class="sec">Chassis — 1×1×.120″ A513 Square-Tube</h2>
       <p>
-        Chassis modeled as a square-tube weldment; tube lengths and miters are controlled by the cut list. All tube prep and fit-up are planned for basic tools and in-house welding (no outsourcing).
+        Simple miter-and-weld approach to stay within budget and use accessible tools. Joints and tabs were detailed so fit-up is repeatable,
+        and the weld sequence is planned to keep things straight. Welding and final assembly are underway.
       </p>
 
       <div class="gallery" style="margin-top:10px">
-        <img src="../images/projects/go-kart/cad-overview.png" alt="CAD overview (placeholder)">
-        <img src="../images/projects/go-kart/cutlist.png" alt="Cut list (placeholder)">
-        <img src="../images/projects/go-kart/drawing-frame.png" alt="Frame drawing excerpt (placeholder)">
+        <figure>
+          <img src="../images/projects/go-kart/cad-overview.png" alt="CAD frame (placeholder)">
+          <figcaption>CAD overview of the square-tube chassis.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/drawing-frame.png" alt="Frame drawings (placeholder)">
+          <figcaption>Drawing excerpt for lengths/miters.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/cutlist.png" alt="Cut list (placeholder)">
+          <figcaption>Cut lengths documented for prep and tracking.</figcaption>
+        </figure>
       </div>
-    </div>
-  </section>
 
-  <!-- POWERTRAIN (only what’s in the notes) -->
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="sec">Powertrain</h2>
-      <ul class="tight">
-        <li><strong>Lifan 212 cc</strong> 4-stroke, electric-start.</li>
-        <li><strong>30-series torque converter</strong> feeding chain to a <strong>live axle</strong>.</li>
-        <li><strong>Compatibility:</strong> same 3/4″ keyed shaft & bolt pattern as Predator; pairs with Comet TAV2.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ELECTRICAL (push-to-start; inline fuses etc.) -->
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="sec">Electrical — Push-to-Start</h2>
-      <p>
-        Custom push-to-start integrated with the Lifan harness: battery → inline fuse at battery positive → master → push-button branch (with smaller fuse) → starter relay → starter; kill switch to ground ignition. Notes call out battery cables, inline fuses, ring terminals, and proper crimping.
-      </p>
-
-      <div class="gallery" style="margin-top:10px">
-        <img src="../images/projects/go-kart/wiring-diagram.png" alt="Wiring diagram (placeholder)">
-        <img src="../images/projects/go-kart/push-to-start.png" alt="Push-to-start module (placeholder)">
-      </div>
-    </div>
-  </section>
-
-  <!-- FEA PLACEHOLDERS (your notes mention static checks / acceptable deflection) -->
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="sec">FEA (checkpoints)</h2>
-      <p>
-        Static checks on key areas to confirm acceptable deflection/stress before cutting tube. (Drop screenshots here as they finalize.)
-      </p>
       <div class="gallery">
-        <img src="../images/projects/go-kart/fea-steering.png" alt="FEA steering mount (placeholder)">
-        <img src="../images/projects/go-kart/fea-axle-tab.png" alt="FEA axle tab (placeholder)">
-        <img src="../images/projects/go-kart/drawing-brackets.png" alt="Bracket drawings (placeholder)">
+        <figure>
+          <img src="../images/projects/go-kart/cutting.jpg" alt="Cutting tube (placeholder)">
+          <figcaption>Tubes cut on a chop saw.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/grinding.jpg" alt="Angle grinding (placeholder)">
+          <figcaption>Miters/bevels done with an angle grinder.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/welding.jpg" alt="Welding (placeholder)">
+          <figcaption>Tack, verify, then weld-out per sequence.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- BUILD STATUS / LOG (mirrors your doc without adding new claims) -->
+  <!-- POWERTRAIN (TAV issue + fix; room for engine/TAV photos) -->
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="sec">Build Status</h2>
-      <ul class="tight">
-        <li>Direction set: non-shifter 4-stroke (first build focus on reliability/safety; notes cite shifter karts >100&nbsp;mph / 0–60≈4s as out of scope).</li>
-        <li>Material finalized: 1×1×.120″ A513 square-tube; ordered 60&nbsp;ft vs. ≈39.8&nbsp;ft needed (cut-list ≈477&nbsp;in) to allow margin.</li>
-        <li>Engine integrated: Lifan 212 cc ES (bench-tested via recoil and ES per notes).</li>
-        <li>Chassis tube prep underway; weld/assembly in progress per plan.</li>
-      </ul>
+      <h2 class="sec">Powertrain — Lifan 212 cc ES + 30-Series TAV</h2>
+      <p>
+        Lifan 212&nbsp;cc electric-start with a custom push-to-start, 30-series TAV to #420 chain, and a live axle. Choice centers on reliability,
+        available parts, and keeping the start/charging system straightforward.
+      </p>
 
+      <div class="issue"><strong>Issue:</strong> TAV backplate limited belt alignment with available engine-mount slot travel.</div>
+      <div class="fix"><strong>Fix:</strong> Added spacers and a slotted secondary bracket to set center distance while keeping the TAV parallel.</div>
+
+      <div class="gallery">
+        <figure>
+          <img src="../images/projects/go-kart/engine-mount.jpg" alt="Engine on mount (placeholder)">
+          <figcaption>Engine mounting and chainline layout.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/tav-spacer.jpg" alt="TAV spacer/slot fix (placeholder)">
+          <figcaption>Spacer + slot solution for alignment.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELECTRICAL (diagram + push button integration) -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <h2 class="sec">Electrical — Push-to-Start Integration</h2>
+      <p>
+        Start path: battery → inline fuse at battery positive → master → push-button branch (fused) → starter relay → starter. Kill switch grounds ignition. Grounds terminate to a single chassis lug.
+      </p>
+
+      <div class="issue"><strong>Issue:</strong> Starter latched once due to a shared ground path with the kill switch.</div>
+      <div class="fix"><strong>Fix:</strong> Dedicated ground strap to the starter case and separated returns; ferrule-crimped terminations.</div>
+
+      <div class="gallery" style="margin-top:10px">
+        <figure>
+          <img src="../images/projects/go-kart/wiring-diagram.png" alt="Wiring diagram (placeholder)">
+          <figcaption>Diagram of battery, master, fuses, push-button, relay, starter, and kill switch.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/push-to-start.png" alt="Push-to-start hardware (placeholder)">
+          <figcaption>Push-button and relay hardware integrated with the Lifan harness.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEA space -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <h2 class="sec">FEA — Checkpoints</h2>
+      <p>
+        Static checks used to sanity-check deflection/stress at known hot-spots before cutting tube. Drop screenshots here as they finalize.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="../images/projects/go-kart/fea-steering.png" alt="FEA — steering mount (placeholder)">
+          <figcaption>Steering column bracket under torque.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/fea-axle-tab.png" alt="FEA — axle tab (placeholder)">
+          <figcaption>Axle bearing tab under braking case.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/fea-frame.png" alt="FEA — frame span (placeholder)">
+          <figcaption>Representative frame span check.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS / GALLERY placeholders -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <h2 class="sec">Photos (ongoing)</h2>
+      <div class="gallery">
+        <img src="../images/projects/go-kart/shop-1.jpg" alt="Shop progress (placeholder)">
+        <img src="../images/projects/go-kart/shop-2.jpg" alt="Tack-up (placeholder)">
+        <img src="../images/projects/go-kart/shop-3.jpg" alt="Weld detail (placeholder)">
+      </div>
       <a class="btn outline" style="margin-top:12px" href="../index.html#projects">← Back to projects</a>
     </div>
   </section>
