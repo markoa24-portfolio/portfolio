@@ -1,1 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UCLA — Experience Detail</title>
+  <meta name="description" content="Case study page for UCLA role." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    :root { --muted:#6b7280; --card:#0b0c0f08; --line:#1f29371a; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    header a.brand { text-decoration:none; }
+    .hero-tight{padding-top:120px}
+    .muted { color: var(--muted); }
+    .kicker { text-transform: uppercase; letter-spacing:.08em; font-weight:700; font-size:.85rem; color:var(--muted); }
+    section { margin: 40px 0; }
+    .grid { display:grid; gap:1.25rem; }
+    @media (min-width: 900px){ .grid-2 { grid-template-columns: 1.1fr .9fr; } }
+    .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
+    .list-tight li { margin:.25rem 0; }
+    .placeholder{border:1.5px dashed #a3a3a3;border-radius:12px;min-height:180px;background:#fafafa;color:#6b7280;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px}
+    .pill{display:inline-block;padding:.15rem .6rem;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:600;font-size:.8rem;margin:.125rem .25rem}
+  </style>
+</head>
+<body>
+<header class="site-header glass">
+  <div class="container">
+    <a class="brand" href="../index.html#experience">← Experience</a>
+    <nav class="nav">
+      <a href="../index.html#projects" class="u-underline">Projects</a>
+      <a href="../resume.html" class="u-underline">Resume</a>
+      <a href="../index.html#contact" class="u-underline">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☼</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section hero-tight">
+    <div class="container">
+      <h1>UCLA — [Your Title]</h1>
+      <p class="muted">Detailed responsibilities, selected projects, and outcomes from your role at UCLA.</p>
+      <div class="placeholder" style="margin-top:12px">Photo: lab or project (non-sensitive)</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <div class="kicker">Role scope</div>
+          <div class="card">
+            <ul class="list-tight">
+              <li>Placeholder bullet (replace with your actual scope).</li>
+              <li>Placeholder bullet.</li>
+              <li>Placeholder bullet.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="kicker">Environment & tools</div>
+          <div class="card">
+            <p>
+              <span class="pill">SolidWorks</span><span class="pill">MATLAB</span><span class="pill">Python</span>
+              <span class="pill">Test & Measurement</span><span class="pill">Documentation</span>
+            </p>
+            <div class="placeholder">Artifacts placeholder</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kicker" style="margin-top:28px;">Selected work</div>
+      <div class="card">
+        <p>Add 2–3 mini case studies here (problem → action → result). We’ll fill this after.</p>
+      </div>
+
+      <p style="margin-top:16px;"><a class="btn outline" href="../index.html#experience">← Back to experience</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="y"></span> Mark Agban</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
