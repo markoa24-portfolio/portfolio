@@ -3,33 +3,128 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>High-Power Rocket — Mark Agban</title>
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <title>Group High-Power Rocket — Mark Agban</title>
+  <meta name="description" content="Group high-power rocket project page." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .hero-tight{padding-top:120px}
+    .media{border:1px solid var(--line);border-radius:12px;background:#0e1116}
+    .video-wrap{aspect-ratio:16/9;display:grid;place-items:center;color:var(--muted)}
+    .section h2.sec{margin-top:0}
+    .content p{margin:12px 0}
+    .content ul{margin:10px 0 16px 20px}
+    .content li{margin:6px 0}
+    figure{margin:14px 0}
+    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0d1117}
+    figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width: 960px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 640px){.gallery{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-<header class="site-header glass"><div class="container">
-  <a class="brand" href="../index.html#projects">← Projects</a>
-</div></header>
 
-<main class="section"><div class="container">
-  <h1>High-Power Rocket (group)</h1>
-  <p class="muted">Airframe/fin-can & recovery integration; manufacturing plan and flight-readiness docs.</p>
+<header class="site-header glass">
+  <div class="container">
+    <a class="brand" href="../index.html#projects">Mark Agban</a>
+    <nav class="nav">
+      <a href="../index.html#about" class="u-underline">About</a>
+      <a href="../index.html#projects" class="u-underline">Projects</a>
+      <a href="../index.html#experience" class="u-underline">Experience</a>
+      <a href="../resume.html" class="u-underline">Resume</a>
+      <a href="../index.html#contact" class="u-underline">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☼</button>
+    </nav>
+  </div>
+</header>
 
-  <h2>Overview</h2>
-  <p>Team project—details incoming. This page will cover CAD of the airframe/fin-can, motor mount, recovery system, avionics layout,
-     and pre-flight checklists. Photos/flight data coming soon.</p>
+<main>
 
-  <h2>My contributions (to be expanded)</h2>
-  <ul>
-    <li>Structures & manufacturing plan for fin-can and airframe interfaces.</li>
-    <li>Integration of recovery hardware and avionics mounting.</li>
-    <li>Checklists and documentation for flight readiness.</li>
-  </ul>
-</div></main>
+  <!-- VIDEO FIRST (optional) -->
+  <section class="section hero-tight" data-reveal>
+    <div class="container">
+      <h1 class="hero-title">Group High-Power Rocket</h1>
+      <div class="media video-wrap" style="margin-top:12px">
+        <!-- Local MP4 (uncomment when ready) -->
+        <!-- <video controls src="../images/projects/ghpr/launch.mp4" style="width:100%;height:100%;border-radius:12px"></video> -->
 
-<footer class="site-footer"><div class="container">© <span id="y"></span> Mark Agban</div></footer>
-<script src="../assets/js/main.js"></script>
+        <!-- YouTube embed (uncomment + replace VIDEO_ID) -->
+        <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="GHPR Launch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+        <span>Launch video — add MP4 or YouTube embed when ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUR EXACT WORDING (no edits) -->
+  <section class="section" data-reveal>
+    <div class="container content">
+
+      <!-- ===== START: PASTE YOUR GHPR TEXT EXACTLY BELOW THIS LINE ===== -->
+      <!-- Keep your headings/lists/paragraphs in the order you provide.
+           You can paste plain text or HTML. Do not worry about styling—site CSS handles it. -->
+
+      <!-- Example structure label (delete this comment): -->
+      <!-- <h2 class="sec">Project Overview</h2> -->
+      <!-- <p>...your exact text...</p> -->
+      <!-- <h2 class="sec">System Breakdown</h2> -->
+      <!-- <h3>Airframe & Structure</h3> -->
+      <!-- <p>...your exact text...</p> -->
+      <!-- etc. -->
+
+
+
+      <!-- ===== END: PASTE YOUR GHPR TEXT ABOVE THIS LINE ===== -->
+
+      <!-- OPTIONAL VISUAL HOLDERS (drop or keep as needed) -->
+      <h2 class="sec">Visuals</h2>
+
+      <h3>CAD / Airframe</h3>
+      <div class="gallery">
+        <figure>
+          <img src="../images/projects/ghpr/cad-airframe.png" alt="Airframe CAD placeholder">
+          <figcaption>Airframe CAD overview.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/ghpr/cad-fin-can.png" alt="Fin can CAD placeholder">
+          <figcaption>Fin can / motor mount region.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/ghpr/cad-avbay.png" alt="Avionics bay CAD placeholder">
+          <figcaption>Avionics bay layout.</figcaption>
+        </figure>
+      </div>
+
+      <h3>Manufacturing & Assembly</h3>
+      <div class="gallery">
+        <img src="../images/projects/ghpr/layup.jpg" alt="Composite layup placeholder">
+        <img src="../images/projects/ghpr/assembly.jpg" alt="Assembly placeholder">
+        <img src="../images/projects/ghpr/wiring.jpg" alt="Avionics wiring placeholder">
+      </div>
+
+      <h3>Launch / Recovery</h3>
+      <div class="gallery">
+        <img src="../images/projects/ghpr/pad.jpg" alt="On the pad placeholder">
+        <img src="../images/projects/ghpr/launch.jpg" alt="Launch shot placeholder">
+        <img src="../images/projects/ghpr/recovery.jpg" alt="Recovery placeholder">
+      </div>
+
+      <!-- Optional: flight card / poster -->
+      <!-- <p><a class="btn" href="../images/projects/ghpr/flight-card.pdf" target="_blank" rel="noopener">Open Flight Card (PDF)</a></p> -->
+
+      <a class="btn outline" style="margin-top:16px" href="../index.html#projects">← Back to projects</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="y"></span> Mark Agban</div>
+</footer>
+
+<script defer src="../assets/js/main.js"></script>
 </body>
 </html>
-
