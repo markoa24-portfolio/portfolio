@@ -3,38 +3,151 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Porous Airfoil Flow Study (USC Viterbi) — Mark Agban</title>
+  <title>Effects of Varying Porous Structures of an Airfoil — Mark Agban</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* Local helpers in case the global stylesheet is minimal */
+    :root { --muted:#6b7280; --card:#0b0c0f08; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    header a.brand { text-decoration:none; }
+    .muted { color: var(--muted); }
+    .kicker { text-transform: uppercase; letter-spacing:.08em; font-weight:700; font-size:.85rem; color:var(--muted); }
+    .grid { display:grid; gap:1.25rem; }
+    @media (min-width: 900px){
+      .grid-2 { grid-template-columns: 1.1fr .9fr; }
+    }
+    section { margin: 40px 0; }
+    .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
+    .list-tight li { margin:.25rem 0; }
+    figure.placeholder {
+      border: 1.5px dashed #a3a3a3; border-radius: 12px;
+      padding: 18px; display:flex; align-items:center; justify-content:center;
+      min-height: 190px; background:#fafafa; color:#6b7280; text-align:center;
+    }
+    figure.placeholder figcaption { margin-top:.5rem; font-size:.9rem; color:var(--muted); }
+    code.eq { background:#f8fafc; border-radius:8px; padding:.2rem .45rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .pill { display:inline-block; padding:.15rem .6rem; border-radius:999px; background:#eef2ff; color:#3730a3; font-weight:600; font-size:.8rem; margin:.125rem .25rem .125rem 0; }
+    .poster object { width:100%; height: 920px; border:none; }
+  </style>
 </head>
 <body>
-<header class="site-header glass"><div class="container">
-  <a class="brand" href="../index.html#projects">← Projects</a>
-</div></header>
+<header class="site-header glass">
+  <div class="container">
+    <a class="brand" href="../index.html#projects">← Projects</a>
+  </div>
+</header>
 
-<main class="section"><div class="container">
-  <h1>Porous Airfoil Flow Study (USC Viterbi)</h1>
-  <p class="muted">Varying porous-hole spacing/angle on NACA 0012; CAD models, ANSYS sims, and water-channel testing.</p>
+<main class="section">
+  <div class="container">
 
-  <h2>Summary</h2>
-  <p>Summer research at USC Viterbi: studied how porous holes influence separation and lift/drag on a NACA 0012. We varied hole spacing
-     (10%, 15%, 20% of chord) and tested at angles of attack (3°, 6°, 9°, 12°) near Re ≈ 5×10⁴.</p>
+    <h1>Effects of Varying Porous Structures of an Airfoil</h1>
+    <p class="muted">USC Viterbi SHINE — porous-hole patterns on a NACA 0012 studied with SolidWorks CAD, Ansys simulations, and water-channel experiments.</p>
 
-  <h2>Methods</h2>
-  <ul>
-    <li><strong>CAD & fabrication:</strong> SolidWorks models of porous patterns; 3D printing, clean/finish, assembly.</li>
-    <li><strong>Simulation:</strong> ANSYS 2D cross-section workflow (transient) with MATLAB/Excel helpers.</li>
-    <li><strong>Experiment:</strong> Water-channel testing with laser sheet & high-speed camera; velocity contour comparisons.</li>
-  </ul>
+    <!-- Project Overview -->
+    <section class="grid grid-2">
+      <div>
+        <div class="kicker">Project Overview</div>
+        <p>As part of the <strong>USC Viterbi SHINE</strong> (Summer High School Intensive in Next-Generation Engineering) program, I conducted a research
+        project exploring how <strong>porous airfoil structures</strong> affect lift and drag.</p>
+        <ul class="list-tight">
+          <li>Investigate whether introducing porous holes could <strong>reduce drag</strong> and <strong>increase lift</strong>.</li>
+          <li>Improve overall <strong>aerodynamic efficiency</strong> for future aircraft designs.</li>
+          <li>Produce non-dimensional results that <strong>scale to larger aerospace applications</strong>.</li>
+        </ul>
+      </div>
+      <div>
+        <figure class="placeholder">
+          <div>Placeholder: Poster overview photo or lab setup with water channel</div>
+        </figure>
+      </div>
+    </section>
 
-  <h2>Poster (inline)</h2>
-  <object data="../files/SHINE22-Agban-M-Poster-11-12.pdf" type="application/pdf" width="100%" height="900">
-    <p>Can’t display? <a href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Download the PDF</a>.</p>
-  </object>
-</div></main>
+    <!-- Objectives & Design Parameters -->
+    <section class="grid grid-2">
+      <div>
+        <div class="kicker">Objectives & Design Parameters</div>
+        <ul class="list-tight">
+          <li><strong>Primary objective:</strong> reduce drag and increase lift to improve efficiency.</li>
+          <li><strong>Porous holes:</strong> varied <em>spacing</em> and <em>size</em>.</li>
+          <li><strong>Spacing:</strong> 10%, 15%, 20% of chord length.</li>
+          <li><strong>Hole diameters:</strong> adjusted across configurations for comparison.</li>
+          <li><strong>Angles of attack tested:</strong> 3°, 6°, 9°, 12°.</li>
+          <li><strong>Airfoil model:</strong> NACA 0012.</li>
+          <li><strong>Reynolds number:</strong> fixed at 5 × 10<sup>4</sup> for consistency with prior work.</li>
+        </ul>
+        <p class="card"><strong>Formulas used.</strong> Lift coefficient <code class="eq">C<sub>L</sub></code> and drag coefficient
+          <code class="eq">C<sub>D</sub></code> were computed using standard non-dimensional relationships so results generalize beyond the test scale.</p>
+      </div>
+      <div>
+        <figure class="placeholder">
+          <div>Placeholder: Diagram of NACA 0012 with porous-hole placement and spacing labels</div>
+        </figure>
+      </div>
+    </section>
 
-<footer class="site-footer"><div class="container">© <span id="y"></span> Mark Agban</div></footer>
-<script src="../assets/js/main.js"></script>
+    <!-- Methods & Tools -->
+    <section>
+      <div class="kicker">Methods & Tools</div>
+      <div class="card">
+        <p><strong>Simulations (Ansys + MATLAB).</strong> Modeled airflow around porous and non-porous airfoils; built meshes with appropriate boundary
+        conditions; simulated velocity profiles, pressure contours, and lift/drag coefficients at multiple angles of attack.</p>
+        <p><strong>CAD & Experiments (SolidWorks + 3D Printing).</strong> Designed porous airfoils in SolidWorks; 3D-printed in two halves, then finished and assembled.
+        Conducted physical tests in a <strong>water channel</strong>, using dye for separation visualization and a high-speed camera for velocity capture.</p>
+      </div>
+      <figure class="placeholder" style="margin-top:14px;">
+        <div>Placeholder: CAD render of porous airfoil and photo of water-channel test setup</div>
+      </figure>
+    </section>
+
+    <!-- Results -->
+    <section>
+      <div class="kicker">Results</div>
+      <ul class="list-tight">
+        <li><strong>Flow behavior:</strong> porous holes reduced flow separation in some cases, delaying stall.</li>
+        <li><strong>Lift/drag trends:</strong> at low AoA, porous configurations showed slightly reduced drag; at higher AoA, effects varied—
+          some layouts improved the lift-to-drag ratio while others introduced additional turbulence.</li>
+        <li><strong>Velocity profiles:</strong> water-channel measurements aligned with simulations, showing smoother downstream flow with optimized spacing.</li>
+      </ul>
+      <figure class="placeholder" style="margin-top:8px;">
+        <div>Placeholder: Graph of lift/drag vs AoA and water-channel image set</div>
+      </figure>
+    </section>
+
+    <!-- Skills & Techniques -->
+    <section>
+      <div class="kicker">Skills & Techniques Gained</div>
+      <p>
+        <span class="pill">Ansys CFD</span>
+        <span class="pill">MATLAB</span>
+        <span class="pill">SolidWorks</span>
+        <span class="pill">3D Printing</span>
+        <span class="pill">Water-Channel Testing</span>
+        <span class="pill">Dye Visualization</span>
+        <span class="pill">Data Analysis (C<sub>L</sub>, C<sub>D</sub>)</span>
+      </p>
+      <figure class="placeholder">
+        <div>Placeholder: Collage of simulation screenshots and lab photos</div>
+      </figure>
+    </section>
+
+    <!-- Poster -->
+    <section class="poster">
+      <div class="kicker">Full Poster</div>
+      <object data="../files/SHINE22-Agban-M-Poster-11-12.pdf" type="application/pdf">
+        <p>Can't display the inline PDF? <a href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Download the poster</a>.</p>
+      </object>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="y"></span> Mark Agban</div>
+</footer>
+<script>
+  // year stamp
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
-
