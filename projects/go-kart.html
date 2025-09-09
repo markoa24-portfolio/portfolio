@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Scratch-Built Go-Kart Project — Mark Agban</title>
-  <meta name="description" content="Scratch-built go-kart project: overview, subsystems, engineering process, timeline, skills & outcomes." />
+  <title>Custom Go-Kart — Mark Agban</title>
+  <meta name="description" content="Scratch-built go-kart project: overview, subsystems, engineering process, timeline, skills & outcomes, with CAD, fabrication, wiring, and assembly placeholders." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -17,6 +17,12 @@
     .content p{margin:12px 0}
     .content ul{margin:10px 0 16px 20px}
     .content li{margin:6px 0}
+    figure{margin:14px 0}
+    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0d1117}
+    figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width: 960px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 640px){.gallery{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -40,7 +46,7 @@
   <!-- VIDEO FIRST (keep this at the top; uncomment when you have the file) -->
   <section class="section hero-tight" data-reveal>
     <div class="container">
-      <h1 class="hero-title">Scratch-Built Go-Kart Project</h1>
+      <h1 class="hero-title">Custom Go-Kart</h1>
       <div class="media video-wrap" style="margin-top:12px">
         <!-- Local MP4 -->
         <!-- <video controls src="../images/projects/go-kart/build.mp4" style="width:100%;height:100%;border-radius:12px"></video> -->
@@ -53,7 +59,7 @@
     </div>
   </section>
 
-  <!-- CONTENT USING YOUR EXACT WORDING & ORDER -->
+  <!-- CONTENT USING YOUR EXACT WORDING & ORDER, WITH PHOTO PLACEHOLDERS -->
   <section class="section" data-reveal>
     <div class="container content">
 
@@ -69,6 +75,22 @@
 
       <p>At the very beginning, we set a budget cap and created a Bill of Materials (BOM) draft. This helped us estimate costs, decide which parts could be fabricated in-house, and which would need to be purchased outright. The BOM became a living document, updated weekly as we refined the design and sourced components.</p>
 
+      <!-- CAD OVERVIEW PLACEHOLDERS (Portfolio Presentation Tip: CAD renders) -->
+      <div class="gallery">
+        <figure>
+          <img src="../images/projects/go-kart/cad-overview.png" alt="CAD frame overview placeholder">
+          <figcaption>CAD: chassis weldment overview in SolidWorks.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/drivetrain-exploded.png" alt="Drivetrain exploded view placeholder">
+          <figcaption>CAD: engine → TAV → chain → live axle layout.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/cutlist.png" alt="Cut list placeholder">
+          <figcaption>Weldment cut list used for stock planning.</figcaption>
+        </figure>
+      </div>
+
       <h2 class="sec">Subsystems</h2>
 
       <h3>Engine &amp; Drivetrain</h3>
@@ -78,12 +100,44 @@
 
       <p>The drivetrain was designed around a live rear axle, with keyed hubs, sprocket, rotor, and lock collars held in place by flangettes and set screws. This rugged and straightforward setup is common in karts, offering low maintenance and strong performance.</p>
 
+      <!-- POWERTRAIN PHOTOS (Portfolio Presentation Tip: fabrication/walkthrough) -->
+      <div class="gallery">
+        <figure>
+          <img src="../images/projects/go-kart/engine-mount.jpg" alt="Engine mount placeholder">
+          <figcaption>Engine mounting and chainline check.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/tav-spacer.jpg" alt="TAV alignment placeholder">
+          <figcaption>30-series CVT alignment and spacing.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/axle-lock-collars.jpg" alt="Live axle collars placeholder">
+          <figcaption>Live axle hubs, collars, and rotor location.</figcaption>
+        </figure>
+      </div>
+
       <h3>Chassis — Design</h3>
       <p>Our original CAD design used circular DOM/ERW tubing. It looked clean and mirrored professional kart frames, but round tubing required expensive precision bending we couldn’t do in-house. Flat components like the engine plate and pedal mounts also wouldn’t weld as cleanly to curved surfaces.</p>
 
       <p>To stay under budget and fully in-house, we redesigned the chassis with 1.0" × 1.0" × 0.120" A513 square tubing. Square tubing allowed easy cutting, welding, and jigging using standard shop tools while still offering more than enough strength. The trade-off was a slightly heavier frame, but for our build, the advantages outweighed that drawback.</p>
 
       <p>The chassis was modeled in SolidWorks Weldments, fitted carefully around the engine, torque converter, axle, seat, and pedals. Spindle tabs and the brake mount were also CAD-modeled for cutting and welding. Preliminary static simulations confirmed that key members—steering crossbar, seat supports, and front rails—could handle a conservative 180 lb driver load without unacceptable deflection.</p>
+
+      <!-- CHASSIS DESIGN FIGURES -->
+      <div class="gallery">
+        <figure>
+          <img src="../images/projects/go-kart/drawing-frame.png" alt="Frame drawings placeholder">
+          <figcaption>Frame drawings with member lengths and miters.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/fea-steering.png" alt="FEA steering placeholder">
+          <figcaption>Structural check: steering support deflection/stress.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/go-kart/fea-frame.png" alt="FEA frame span placeholder">
+          <figcaption>Representative frame span stiffness check.</figcaption>
+        </figure>
+      </div>
 
       <h3>Chassis — Manufacture</h3>
       <p>We ordered 60 ft of square tubing, cut each piece according to the SolidWorks cut list, and deburred every joint for flush welds.</p>
@@ -96,8 +150,21 @@
 
       <p>For the axle hangers, we clamped a dummy axle in place during welding. This ensured the real axle would be level and aligned with the chainline. The engine plate was slotted to allow chain tensioning in final assembly.</p>
 
+      <!-- FABRICATION PHOTOS -->
+      <div class="gallery">
+        <img src="../images/projects/go-kart/cutting.jpg" alt="Cutting steel placeholder">
+        <img src="../images/projects/go-kart/grinding.jpg" alt="Grinding edges placeholder">
+        <img src="../images/projects/go-kart/welding.jpg" alt="Welding sequence placeholder">
+      </div>
+
       <h3>Steering</h3>
       <p>For steering, we used a vintage go-kart steering kit as the base, then customized it with additional bearings to improve smoothness and reduce play. The wheel was mounted to a shaft carried by a U-bend front crossbar, welded directly into the chassis. This gave us solid ergonomics, smoother operation, and alignment directly with the spindles for proper geometry.</p>
+
+      <!-- STEERING PHOTO -->
+      <figure>
+        <img src="../images/projects/go-kart/steering-setup.jpg" alt="Steering setup placeholder">
+        <figcaption>Steering column, U-bend crossbar, and spindle alignment.</figcaption>
+      </figure>
 
       <h3>Braking</h3>
       <p>The kart uses a rear hydraulic disc brake system, chosen over mechanical for:</p>
@@ -108,8 +175,24 @@
       </ul>
       <p>The rotor mounts directly to the live axle, with a hydraulic caliper fixed to a chassis bracket. A pedal-mounted master cylinder connects through a clevis linkage. This setup gave reliable stopping power and added confidence to the kart’s performance.</p>
 
+      <!-- BRAKE PHOTO -->
+      <figure>
+        <img src="../images/projects/go-kart/brake-setup.jpg" alt="Hydraulic brake setup placeholder">
+        <figcaption>Hydraulic rotor/caliper on axle with bracket and master cylinder linkage.</figcaption>
+      </figure>
+
       <h3>Electrical System</h3>
       <p>Although the Lifan engine had a factory key-start, we engineered a custom push-to-start system. Using a 12V battery, relay, fuses, and a momentary button, we built a safe parallel circuit that worked alongside the original key. This modernized the kart’s controls while reinforcing good electrical design practices.</p>
+
+      <!-- WIRING DIAGRAM + HARDWARE PHOTOS -->
+      <div class="gallery">
+        <figure style="grid-column:1/-1">
+          <img src="../images/projects/go-kart/wiring-diagram.png" alt="Wiring diagram placeholder">
+          <figcaption>Push-to-start + key-start: battery, fusing, master, push-button, relay, starter, and kill-to-ground.</figcaption>
+        </figure>
+        <img src="../images/projects/go-kart/push-to-start.png" alt="Push-to-start hardware placeholder">
+        <img src="../images/projects/go-kart/harness-mount.jpg" alt="Harness routing placeholder">
+      </div>
 
       <h2 class="sec">Week-by-Week Timeline (15 Weeks)</h2>
       <p>Weeks 1–2: Defined scope, set budget cap, drafted BOM.</p>
@@ -120,6 +203,13 @@
       <p>Weeks 11–12: Ordered tubing and hardware; cut, deburred, and tack-welded chassis.</p>
       <p>Weeks 13–14: MIG welded frame; aligned axle hangers with dummy shaft; slotted engine plate.</p>
       <p>Week 15: Bench-tested engine (manual + electric start), integrated push-to-start, and mounted hydraulic brake system.</p>
+
+      <!-- ROLLING / FINAL ASSEMBLY PHOTOS -->
+      <div class="gallery">
+        <img src="../images/projects/go-kart/rolling-chassis.jpg" alt="Rolling chassis placeholder">
+        <img src="../images/projects/go-kart/final-assembly.jpg" alt="Final assembly placeholder">
+        <img src="../images/projects/go-kart/test-day.jpg" alt="Test day placeholder">
+      </div>
 
       <h2 class="sec">Skills &amp; Outcomes</h2>
       <p>CAD &amp; Analysis: SolidWorks weldments, cut lists, preliminary structural simulation.</p>
