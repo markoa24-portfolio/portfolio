@@ -1,1 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lamsco West — Manufacturing Engineering Intern</title>
+  <meta name="description" content="Case study: Lamsco West Manufacturing Engineering Intern." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    :root { --muted:#6b7280; --card:#0b0c0f08; --line:#1f29371a; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    header a.brand { text-decoration:none; }
+    .hero-tight{padding-top:120px}
+    .muted { color: var(--muted); }
+    .kicker { text-transform: uppercase; letter-spacing:.08em; font-weight:700; font-size:.85rem; color:var(--muted); }
+    section { margin: 40px 0; }
+    .grid { display:grid; gap:1.25rem; }
+    @media (min-width: 900px){ .grid-2 { grid-template-columns: 1.1fr .9fr; } }
+    .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
+    .list-tight li { margin:.25rem 0; }
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:960px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.gallery{grid-template-columns:1fr}}
+    figure{margin:14px 0}
+    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+    .placeholder{border:1.5px dashed #a3a3a3;border-radius:12px;min-height:180px;background:#fafafa;color:#6b7280;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px}
+    .pill{display:inline-block;padding:.15rem .6rem;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:600;font-size:.8rem;margin:.125rem .25rem}
+  </style>
+</head>
+<body>
+<header class="site-header glass">
+  <div class="container">
+    <a class="brand" href="../index.html#experience">← Experience</a>
+    <nav class="nav">
+      <a href="../index.html#projects" class="u-underline">Projects</a>
+      <a href="../resume.html" class="u-underline">Resume</a>
+      <a href="../index.html#contact" class="u-underline">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☼</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section hero-tight">
+    <div class="container">
+      <h1>Lamsco West — Manufacturing Engineering Intern</h1>
+      <p class="muted">Spec-driven checks, drawing/plan reviews, MRB support on nonconformances, and production improvements (fixtures/routing) to reduce scrap and rework.</p>
+      <div class="placeholder" style="margin-top:12px">Photo: production floor or fixtures (non-sensitive)</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <div class="kicker">Role scope</div>
+          <div class="card">
+            <ul class="list-tight">
+              <li>Reviewed drawings, specs, and travelers against customer/AS9100 requirements.</li>
+              <li>Updated manufacturing plans and checkpoints; clarified acceptance criteria.</li>
+              <li>Supported MRB to contain, root-cause, and close NCRs.</li>
+              <li>Proposed fixturing/routing tweaks to reduce rework.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="kicker">Environment & tools</div>
+          <div class="card">
+            <p>
+              <span class="pill">AS9100</span><span class="pill">MRB/NCR</span><span class="pill">GD&T</span>
+              <span class="pill">Travelers/Routers</span><span class="pill">Excel</span><span class="pill">Root Cause</span>
+            </p>
+            <div class="placeholder">Sanitized traveler snapshot placeholder</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kicker" style="margin-top:28px;">Selected improvements</div>
+      <div class="card">
+        <p>Placeholder sections for 2–3 mini case studies (fixture change, router consolidation, NCR reduction). We’ll fill these next.</p>
+      </div>
+
+      <p style="margin-top:16px;"><a class="btn outline" href="../index.html#experience">← Back to experience</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="y"></span> Mark Agban</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
