@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <style>
-    /* Match the USC/Go-Kart visual language: subheaders, cards, placeholders */
     :root { --muted:#6b7280; --card:#0b0c0f08; --line:#1f29371a; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
     header a.brand { text-decoration:none; }
@@ -37,12 +36,6 @@
     figure { margin:14px 0; }
     figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0d1117}
     figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
-
-    .placeholder {
-      border: 1.5px dashed #a3a3a3; border-radius: 12px;
-      padding: 18px; display:flex; align-items:center; justify-content:center;
-      min-height: 190px; background:#fafafa; color:#6b7280; text-align:center;
-    }
   </style>
 </head>
 <body>
@@ -69,9 +62,9 @@
       <h1>Group High-Powered Rocket (GHPR)</h1>
       <p class="muted">G-class rocket designed, fabricated, and launched with a safe payload recovery system. 3D-printed test rocket → fiberglass final vehicle.</p>
       <div class="media video-wrap" style="margin-top:12px">
-        <!-- Option A: Local MP4 (uncomment when ready) -->
+        <!-- Option A: Local MP4 -->
         <!-- <video controls src="../images/projects/ghpr/launch.mp4" style="width:100%;height:100%;border-radius:12px"></video> -->
-        <!-- Option B: YouTube embed (uncomment + replace VIDEO_ID) -->
+        <!-- Option B: YouTube embed -->
         <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="GHPR Launch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
         <span>Launch video — add MP4 or YouTube embed when ready</span>
       </div>
@@ -90,10 +83,14 @@
           </div>
         </div>
         <div>
-          <div class="gallery">
-            <img src="../images/projects/ghpr/team-rocket.jpg" alt="Team rocket photo placeholder">
-            <img src="../images/projects/ghpr/side-by-side.jpg" alt="3DPR vs GHPR side-by-side placeholder">
-          </div>
+          <figure>
+            <img src="../images/projects/ghpr/team.jpg" alt="Team holding the GHPR after launch">
+            <figcaption>Team with GHPR after launch.</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/projects/ghpr/3dpr-ghpr-compare.jpg" alt="3DPR vs GHPR side-by-side">
+            <figcaption>3DPR test rocket (left) and fiberglass GHPR (right).</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -110,9 +107,16 @@
           <li>Makerspace Tools – 3D printing, laser cutting, composite layup equipment.</li>
         </ul>
       </div>
+
       <div class="gallery" style="margin-top:12px;">
-        <img src="../images/projects/ghpr/openrocket-sim.png" alt="OpenRocket simulation placeholder">
-        <img src="../images/projects/ghpr/solidworks-cad.png" alt="SolidWorks CAD models placeholder">
+        <figure>
+          <img src="../images/projects/ghpr/openrocket-profile.png" alt="OpenRocket vehicle layout">
+          <figcaption>OpenRocket layout used for stability checks.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/ghpr/cad-parts.png" alt="SolidWorks parts for fins, rings, bulkhead, coupler">
+          <figcaption>SolidWorks parts: fin, centering ring, launch lug, coupler.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -130,10 +134,12 @@
         </ul>
         <p><strong>Key Outcome:</strong> Provided hands-on practice with simulations, CAD-to-fabrication workflow, and recovery systems—directly informing GHPR design.</p>
       </div>
-      <div class="gallery" style="margin-top:12px;">
-        <img src="../images/projects/ghpr/3dpr-launch.jpg" alt="3DPR launch placeholder">
-        <img src="../images/projects/ghpr/3dpr-parachute.jpg" alt="3DPR parachute deployment placeholder">
-      </div>
+
+      <!-- single image only (comparison) -->
+      <figure style="margin-top:12px;">
+        <img src="../images/projects/ghpr/3dpr-ghpr-compare.jpg" alt="3DPR vs GHPR comparison">
+        <figcaption>Comparison: 3DPR prototype and final fiberglass GHPR.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -161,10 +167,14 @@
           </div>
         </div>
         <div>
-          <div class="gallery">
-            <img src="../images/projects/ghpr/cad-assembly.png" alt="CAD assembly render placeholder">
-            <img src="../images/projects/ghpr/flight-sim-graph.png" alt="Flight simulation graph placeholder">
-          </div>
+          <figure>
+            <img src="../images/projects/ghpr/flight-graph.png" alt="Flight simulation graph">
+            <figcaption>OpenRocket simulation: altitude, velocity, stability over time.</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/projects/ghpr/openrocket-profile.png" alt="OpenRocket profile view">
+            <figcaption>Profile view used to place subsystems.</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -181,10 +191,10 @@
           </div>
         </div>
         <div>
-          <div class="gallery">
-            <img src="../images/projects/ghpr/layup.jpg" alt="Fiberglass layup placeholder">
-            <img src="../images/projects/ghpr/sanding.jpg" alt="Sanding placeholder">
-          </div>
+          <figure>
+            <img src="../images/projects/ghpr/bodytube-process.jpg" alt="Layup, sanding, slotting and assembly montage">
+            <figcaption>Body-tube process: layup, sanding, slotting, and fin assembly.</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -199,9 +209,10 @@
           </div>
         </div>
         <div>
-          <div class="gallery">
-            <img src="../images/projects/ghpr/nose-prototypes.jpg" alt="Nose cone prototypes placeholder">
-          </div>
+          <figure>
+            <img src="../images/projects/ghpr/painting.jpg" alt="Painting the airframe">
+            <figcaption>Painting the airframe prior to launch.</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -217,42 +228,14 @@
         </div>
         <div>
           <div class="gallery">
-            <img src="../images/projects/ghpr/laser-cutting.jpg" alt="Laser cutting setup placeholder">
-            <img src="../images/projects/ghpr/fins-epoxied.jpg" alt="Epoxied fins placeholder">
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-2">
-        <div>
-          <h4>Bulkhead &amp; Egg Housing</h4>
-          <div class="card">
-            <ul class="list-tight">
-              <li>Designed middle tube to hold egg securely.</li>
-              <li>Integrated with shock cord mount for recovery.</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div class="gallery">
-            <img src="../images/projects/ghpr/bulkhead-shockcord.jpg" alt="Bulkhead and shock cord integration placeholder">
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-2">
-        <div>
-          <h4>Final Assembly</h4>
-          <div class="card">
-            <ul class="list-tight">
-              <li>Epoxied all components (fins, rings, bulkhead, motor mount).</li>
-              <li>Spray painted for team identity—rocket named “The Skunk.”</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div class="gallery">
-            <img src="../images/projects/ghpr/painted-rocket.jpg" alt="Painted rocket placeholder">
+            <figure>
+              <img src="../images/projects/ghpr/laser-cutting.jpg" alt="Laser cutting fin profile">
+              <figcaption>Laser cutting fin profiles.</figcaption>
+            </figure>
+            <figure>
+              <img src="../images/projects/ghpr/rings-cut.jpg" alt="Finished centering rings">
+              <figcaption>Finished centering rings.</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -266,52 +249,26 @@
           <li>Payload: Egg payload was recovered without damage (adjusted).</li>
         </ul>
       </div>
-      <div class="gallery" style="margin-top:12px;">
-        <img src="../images/projects/ghpr/launch-rail.jpg" alt="Launch rail placeholder">
-        <img src="../images/projects/ghpr/in-flight.jpg" alt="In-flight placeholder">
-        <img src="../images/projects/ghpr/recovery.jpg" alt="Recovery placeholder">
-      </div>
-
-      <h2 style="margin-top:28px;">Challenges &amp; Lessons Learned</h2>
-
-      <div class="grid grid-2">
-        <div>
-          <h3>Challenges</h3>
-          <div class="card">
-            <ul class="list-tight">
-              <li>Nose cone and middle tube fit required multiple iterations.</li>
-              <li>Motor mount fitting required rework.</li>
-              <li>Weight slightly exceeded optimal predictions, reducing apogee.</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <h3>Accomplishments</h3>
-          <div class="card">
-            <ul class="list-tight">
-              <li>First successful team-built fiberglass rocket.</li>
-              <li>Seamless integration of CAD, composites, and wood fabrication.</li>
-              <li>Reliable parachute recovery system.</li>
-              <li>Egg payload protected and recovered successfully.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <h2 style="margin-top:28px;">Skills &amp; Outcomes</h2>
-      <div class="card">
-        <ul class="list-tight">
-          <li>Simulation &amp; Design: OpenRocket performance modeling, CAD part design in SolidWorks.</li>
-          <li>Manufacturing: Fiberglass layup, 3D printing, laser cutting, precision epoxying.</li>
-          <li>Integration: Parachute + payload system, structural assembly, painting/finishing.</li>
-          <li>Teamwork: Coordinated subsystem design, manufacturing, and launch operations.</li>
-          <li>Result: High-powered rocket reaching ~2,576 ft apogee with safe recovery.</li>
-        </ul>
-      </div>
 
       <div class="gallery" style="margin-top:12px;">
-        <img src="../images/projects/ghpr/team-launch.jpg" alt="Team photo at launch site placeholder">
+        <figure>
+          <img src="../images/projects/ghpr/on-rail.jpg" alt="Rocket on launch rail">
+          <figcaption>On the launch rail.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/ghpr/launch.jpg" alt="Liftoff photo">
+          <figcaption>Liftoff.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/projects/ghpr/recovery-parachute.jpg" alt="Recovered with parachute deployed">
+          <figcaption>Recovered with parachute deployed.</figcaption>
+        </figure>
       </div>
+
+      <figure style="margin-top:12px;">
+        <img src="../images/projects/ghpr/altimeter.jpg" alt="Altimeter reading 2576 ft">
+        <figcaption>Altimeter readout: 2,576 ft apogee.</figcaption>
+      </figure>
 
       <p style="margin-top:16px;"><a class="btn outline" href="../index.html#projects">← Back to projects</a></p>
 
