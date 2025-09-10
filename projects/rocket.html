@@ -28,18 +28,29 @@
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     @media (max-width: 960px){.gallery{grid-template-columns:repeat(2,1fr)}}
     @media (max-width: 640px){.gallery{grid-template-columns:1fr}}
-    figure { margin:0 }
-    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0d1117}
-    figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
+    .gallery img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0d1117;cursor:zoom-in}
 
-    .gallery-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-    @media (max-width: 680px){ .gallery-2{grid-template-columns:1fr} }
+    /* Smaller, centered video with aspect ratio and fullscreen via native controls */
+    .video-wrap{
+      max-width: 900px;       /* controls overall size */
+      margin: 12px auto 0;    /* centers the player */
+      aspect-ratio: 16/9;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#0e1116;
+      overflow:hidden;
+    }
+    .video-wrap video{width:100%;height:100%;display:block}
 
-    .thumb-sm img { max-height:160px; width:100%; object-fit:contain; }
-    .thumb-sm figcaption { font-size:.85rem; }
-    
-    .media{border:1px solid var(--line);border-radius:12px;background:#0e1116}
-    .video-wrap{aspect-ratio:16/9;display:grid;place-items:center;color:var(--muted)}
+    /* Lightbox */
+    .lightbox{
+      position:fixed;inset:0;display:none;place-items:center;
+      background:rgba(0,0,0,.9);z-index:9999;
+    }
+    .lightbox.open{display:grid}
+    .lightbox img{
+      max-width:92vw;max-height:92vh;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.5)
+    }
   </style>
 </head>
 <body>
@@ -62,17 +73,19 @@
 
   <!-- Video hero -->
   <section class="section hero-tight" data-reveal>
-    <div class="media video-wrap" style="margin-top:12px">
-  <video controls playsinline preload="metadata"
-         poster="../projects/images/projects/ghpr/on-rail.png.png"
-         style="width:100%;height:100%;border-radius:12px">
-    <!-- Best for cross-browser playback -->
-    <source src="../projects/images/projects/ghpr/ghpr-launch.mp4" type="video/mp4">
-    <!-- Your current upload as a fallback (Safari will play this) -->
-    <source src="../projects/images/projects/ghpr/IMG_6650.MOV" type="video/quicktime">
-    Sorry—your browser can’t play this video.
-  </video>
-</div>
+    <div class="container">
+      <h1>Group High-Powered Rocket (GHPR)</h1>
+      <p class="muted">G-class rocket designed, fabricated, and launched with a safe payload recovery system. 3D-printed test rocket → fiberglass final vehicle.</p>
+
+      <div class="video-wrap">
+        <video controls preload="metadata" playsinline>
+          <source src="images/projects/ghpr/IMG_6650.MOV" type="video/quicktime" />
+          <!-- Optional MP4 for broader browser support (add later if you convert): -->
+          <!-- <source src="images/projects/ghpr/launch.mp4" type="video/mp4" /> -->
+          Your browser doesn’t support embedded video. Download:
+          <a href="images/projects/ghpr/IMG_6650.MOV">launch video</a>.
+        </video>
+      </div>
     </div>
   </section>
 
@@ -88,15 +101,9 @@
           </div>
         </div>
         <div>
-          <div class="gallery-2">
-            <figure>
-              <img src="../projects/images/projects/ghpr/3dpr-ghpr-compare.jpg.png" alt="3DPR and GHPR side-by-side">
-              <figcaption>3DPR vs GHPR (size and construction approach).</figcaption>
-            </figure>
-            <figure>
-              <img src="../projects/images/projects/ghpr/team.png.png" alt="Team with the finished rocket">
-              <figcaption>Team with the finished GHPR.</figcaption>
-            </figure>
+          <div class="gallery">
+            <img class="zoomable" src="images/projects/ghpr/3dpr-ghpr-compare.jpg.png" alt="3DPR and GHPR side-by-side">
+            <img class="zoomable" src="images/projects/ghpr/team.png.png" alt="Team with rocket">
           </div>
         </div>
       </div>
@@ -106,7 +113,7 @@
   <!-- Tools & Software -->
   <section class="section" data-reveal>
     <div class="container">
-      <div class="kicker">Tools &amp; Software</div>
+      <div class="kicker">Tools & Software</div>
       <div class="card">
         <ul class="list-tight">
           <li>OpenRocket – used for rocket design, stability margin analysis, and flight simulations (apogee, velocity).</li>
@@ -114,15 +121,9 @@
           <li>Makerspace Tools – 3D printing, laser cutting, composite layup equipment.</li>
         </ul>
       </div>
-      <div class="gallery-2" style="margin-top:12px;">
-        <figure>
-          <img src="../projects/images/projects/ghpr/openrocket-profile.png.png" alt="OpenRocket profile and stability setup">
-          <figcaption>OpenRocket profile &amp; stability setup.</figcaption>
-        </figure>
-        <figure>
-          <img src="../projects/images/projects/ghpr/cad-parts.png.png" alt="SolidWorks parts: fins, rings, couplers">
-          <figcaption>SolidWorks parts: fins, rings, couplers.</figcaption>
-        </figure>
+      <div class="gallery" style="margin-top:12px;">
+        <img class="zoomable" src="images/projects/ghpr/openrocket-profile.png.png" alt="OpenRocket profile">
+        <img class="zoomable" src="images/projects/ghpr/cad-parts.png.png" alt="CAD parts">
       </div>
     </div>
   </section>
@@ -139,6 +140,9 @@
           <li>Launched successfully, reaching high apogee and validating parachute recovery.</li>
         </ul>
         <p><strong>Key Outcome:</strong> Provided hands-on practice with simulations, CAD-to-fabrication workflow, and recovery systems—directly informing GHPR design.</p>
+      </div>
+      <div class="gallery" style="margin-top:12px;">
+        <img class="zoomable" src="images/projects/ghpr/3dpr-ghpr-compare.jpg.png" alt="3DPR and GHPR comparison">
       </div>
     </div>
   </section>
@@ -167,15 +171,9 @@
           </div>
         </div>
         <div>
-          <div class="gallery-2">
-            <figure>
-              <img src="../projects/images/projects/ghpr/cad-parts.png.png" alt="CAD parts">
-              <figcaption>CAD parts overview.</figcaption>
-            </figure>
-            <figure>
-              <img src="../projects/images/projects/ghpr/flight-graph.png.png" alt="Flight simulation graph">
-              <figcaption>Flight simulation graph.</figcaption>
-            </figure>
+          <div class="gallery">
+            <img class="zoomable" src="images/projects/ghpr/cad-parts.png.png" alt="CAD components">
+            <img class="zoomable" src="images/projects/ghpr/flight-graph.png.png" alt="Flight simulation graph">
           </div>
         </div>
       </div>
@@ -193,10 +191,26 @@
           </div>
         </div>
         <div>
-          <figure>
-            <img src="../projects/images/projects/ghpr/bodytube-process.png.png" alt="Body tube layup, sanding, slotting, and dry-fit">
-            <figcaption>Body tube layup → sanding → slotting → dry-fit.</figcaption>
-          </figure>
+          <div class="gallery">
+            <img class="zoomable" src="images/projects/ghpr/bodytube-process.png.png" alt="Layup, sanding, slit cutting, fin bonding">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div>
+          <h4>Nose Cone</h4>
+          <div class="card">
+            <ul class="list-tight">
+              <li>3D printed Haack-series profile for minimized drag.</li>
+              <li>Iterated multiple versions for proper fit with body tube.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="gallery">
+            <!-- If you have a nose-cone photo, place it here later -->
+          </div>
         </div>
       </div>
 
@@ -211,15 +225,26 @@
           </div>
         </div>
         <div>
-          <div class="gallery-2">
-            <figure>
-              <img src="../projects/images/projects/ghpr/laser-cutting.png.png" alt="Laser cutting fins">
-              <figcaption>Laser cutting fins.</figcaption>
-            </figure>
-            <figure>
-              <img src="../projects/images/projects/ghpr/rings-cut.png.png" alt="Finished centering rings">
-              <figcaption>Finished centering rings.</figcaption>
-            </figure>
+          <div class="gallery">
+            <img class="zoomable" src="images/projects/ghpr/laser-cutting.png.png" alt="Laser cutting fins">
+            <img class="zoomable" src="images/projects/ghpr/rings-cut.png.png" alt="Centering rings cut">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div>
+          <h4>Bulkhead &amp; Egg Housing</h4>
+          <div class="card">
+            <ul class="list-tight">
+              <li>Designed middle tube to hold egg securely.</li>
+              <li>Integrated with shock cord mount for recovery.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="gallery">
+            <!-- Add a bulkhead/shock cord image here later if desired -->
           </div>
         </div>
       </div>
@@ -235,10 +260,9 @@
           </div>
         </div>
         <div>
-          <figure>
-            <img src="../projects/images/projects/ghpr/painting.png.png" alt="Painting the rocket">
-            <figcaption>Painting the rocket.</figcaption>
-          </figure>
+          <div class="gallery">
+            <img class="zoomable" src="images/projects/ghpr/painting.png.png" alt="Painting the rocket">
+          </div>
         </div>
       </div>
 
@@ -248,26 +272,35 @@
           <li>Apogee: 2,576 ft (from altimeter reading).</li>
           <li>Velocity: 491 mph at peak ascent.</li>
           <li>Recovery: Parachute deployed successfully; rocket recovered intact.</li>
-          <li>Payload: Egg payload was recovered without damage (adjusted).</li>
+          <li>Payload: Egg payload was recovered without damage.</li>
         </ul>
       </div>
 
+      <!-- 3-wide gallery for rail, liftoff, recovery -->
       <div class="gallery" style="margin-top:12px;">
         <figure>
-          <img src="../projects/images/projects/ghpr/on-rail.png.png" alt="Rocket on launch rail">
-          <figcaption>On the launch rail.</figcaption>
+          <img class="zoomable" src="images/projects/ghpr/on-rail.png.png" alt="On the rail">
+          <figcaption class="muted">On the launch rail.</figcaption>
         </figure>
         <figure>
-          <img src="../projects/images/projects/ghpr/launch.png.png" alt="Liftoff photo">
-          <figcaption>Liftoff.</figcaption>
+          <img class="zoomable" src="images/projects/ghpr/launch.png.png" alt="Liftoff">
+          <figcaption class="muted">Liftoff.</figcaption>
         </figure>
         <figure>
-          <img src="../projects/images/projects/ghpr/recovery-parachute.png.png" alt="Recovered with parachute deployed">
-          <figcaption>Recovered with parachute deployed.</figcaption>
+          <img class="zoomable" src="images/projects/ghpr/recovery-parachute.png.png" alt="Recovered with parachute">
+          <figcaption class="muted">Recovered with parachute deployed.</figcaption>
         </figure>
-        <figure class="thumb-sm">
-          <img src="../projects/images/projects/ghpr/altimeter.png.png" alt="Altimeter reading 2,576 ft">
-          <figcaption>Altimeter: 2,576 ft.</figcaption>
+      </div>
+
+      <!-- 2-wide gallery for altimeter and team -->
+      <div class="gallery" style="grid-template-columns: repeat(2, 1fr); margin-top:12px;">
+        <figure>
+          <img class="zoomable" src="images/projects/ghpr/altimeter.png.png" alt="Altimeter reading 2,576 ft">
+          <figcaption class="muted">Altimeter reading.</figcaption>
+        </figure>
+        <figure>
+          <img class="zoomable" src="images/projects/ghpr/team.png.png" alt="Team after launch">
+          <figcaption class="muted">Post-launch team photo.</figcaption>
         </figure>
       </div>
 
@@ -308,13 +341,6 @@
         </ul>
       </div>
 
-      <div class="gallery-2" style="margin-top:12px;">
-        <figure>
-          <img src="../projects/images/projects/ghpr/team.png.png" alt="Team at launch site with rocket">
-          <figcaption>Team at the launch site with GHPR.</figcaption>
-        </figure>
-      </div>
-
       <p style="margin-top:16px;"><a class="btn outline" href="../index.html#projects">← Back to projects</a></p>
 
     </div>
@@ -322,11 +348,43 @@
 
 </main>
 
+<!-- Lightbox overlay -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <img id="lightbox-img" alt="">
+</div>
+
 <footer class="site-footer">
   <div class="container">© <span id="y"></span> Mark Agban</div>
 </footer>
 
 <script defer src="../assets/js/main.js"></script>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+  // Year stamp
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Simple lightbox: click any .zoomable image to open; click backdrop or press ESC to close
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('img.zoomable').forEach(img=>{
+      img.addEventListener('click',()=>{
+        lbImg.src = img.src;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+    const close = ()=>{
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      lbImg.src = '';
+    };
+    lb.addEventListener('click', e=>{
+      if (e.target === lb) close();
+    });
+    document.addEventListener('keydown', e=>{
+      if (e.key === 'Escape') close();
+    });
+  })();
+</script>
 </body>
 </html>
