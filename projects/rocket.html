@@ -62,14 +62,17 @@
 
   <!-- Video hero -->
   <section class="section hero-tight" data-reveal>
-    <div class="container">
-      <h1>Group High-Powered Rocket (GHPR)</h1>
-      <p class="muted">G-class rocket designed, fabricated, and launched with a safe payload recovery system. 3D-printed test rocket → fiberglass final vehicle.</p>
-      <div class="media video-wrap" style="margin-top:12px">
-        <!-- <video controls src="../projects/images/projects/ghpr/launch.mp4" style="width:100%;height:100%;border-radius:12px"></video> -->
-        <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="GHPR Launch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-        <span>Launch video — add MP4 or YouTube embed when ready</span>
-      </div>
+    <div class="media video-wrap" style="margin-top:12px">
+  <video controls playsinline preload="metadata"
+         poster="../projects/images/projects/ghpr/on-rail.png.png"
+         style="width:100%;height:100%;border-radius:12px">
+    <!-- Best for cross-browser playback -->
+    <source src="../projects/images/projects/ghpr/ghpr-launch.mp4" type="video/mp4">
+    <!-- Your current upload as a fallback (Safari will play this) -->
+    <source src="../projects/images/projects/ghpr/IMG_6650.MOV" type="video/quicktime">
+    Sorry—your browser can’t play this video.
+  </video>
+</div>
     </div>
   </section>
 
