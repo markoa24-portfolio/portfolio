@@ -10,42 +10,48 @@
     :root { --muted:#6b7280; --card:#0b0c0f08; --line:#1f29371a; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
     header a.brand { text-decoration:none; }
-    .muted { color: var(--muted); }
-    .kicker { text-transform: uppercase; letter-spacing:.08em; font-weight:700; font-size:.85rem; color:var(--muted); }
-    .grid { display:grid; gap:1.25rem; }
-    @media (min-width: 900px){ .grid-2 { grid-template-columns: 1.1fr .9fr; } }
-    section { margin: 40px 0; }
-    .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
-    .list-tight li { margin:.25rem 0; }
+    .muted{color:var(--muted)}
+    .kicker{ text-transform:uppercase; letter-spacing:.08em; font-weight:700; font-size:.85rem; color:var(--muted) }
+    section{ margin:40px 0 }
+    .grid{ display:grid; gap:1.25rem }
+    @media (min-width:900px){ .grid-2{ grid-template-columns:1.1fr .9fr } }
+    .card{ background:var(--card); border-radius:14px; padding:1rem 1.1rem }
+    .list-tight li{ margin:.25rem 0 }
 
-    /* Images */
-    figure { margin:0; }
-    .media { border:1px solid var(--line); border-radius:12px; background:#0e1116; padding:8px; }
-    .media img { width:100%; height:auto; border-radius:8px; display:block; }
-    figcaption { font-size:.92rem; color:var(--muted); margin:.4rem .2rem 0; }
+    /* Images + captions */
+    figure{ margin:0 }
+    figure img{ width:100%; height:auto; border-radius:12px; border:1px solid var(--line); background:#0d1117; cursor:zoom-in }
+    figcaption{ font-size:.92rem; color:var(--muted); margin-top:6px }
 
-    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media (max-width: 820px){ .gallery{grid-template-columns:1fr} }
+    /* Simple 2-up gallery inside a figure (still one figure, same section structure) */
+    .two-up{ display:grid; grid-template-columns:1fr 1fr; gap:12px }
+    @media (max-width:720px){ .two-up{ grid-template-columns:1fr } }
+
+    /* Full-bleed poster viewer */
+    .poster { margin-top:14px }
+    .full-bleed {
+      width:100vw;
+      margin-left:50%;
+      transform:translateX(-50%);
+    }
+    .poster-toolbar{
+      display:flex; gap:.5rem; align-items:center; margin:4px 0 10px;
+    }
+    .poster-toolbar a{ font-size:.9rem; padding:.35rem .65rem; border:1px solid var(--line); border-radius:8px }
+    .poster object{
+      width:100%;
+      height: calc(100vh - 160px); /* tall as viewport minus header space */
+      border:none;
+      background:#0d1117;
+      border-radius:12px;
+      box-shadow: 0 0 0 1px var(--line) inset;
+    }
 
     /* Lightbox */
-    .zoom { cursor:zoom-in; }
-    .lightbox { position:fixed; inset:0; display:none; align-items:center; justify-content:center;
-                background:rgba(0,0,0,.9); z-index:9999; padding:24px; }
-    .lightbox img{max-width:min(96vw,1400px);max-height:92vh;border-radius:12px}
-    .lightbox:target{display:flex}
-    .lightbox a.close{position:absolute; top:14px; right:16px; color:#fff; font-size:28px; text-decoration:none;
-                      background:rgba(255,255,255,.12); border-radius:10px; padding:2px 10px;}
-
-    /* Poster viewer: tall & fit-to-width */
-    .poster-actions { display:flex; gap:.5rem; margin:.5rem 0 .75rem; flex-wrap:wrap; }
-    .poster-actions .btn { text-decoration:none; }
-    .poster-frame{
-      width:100%;
-      height: clamp(760px, 88vh, 1400px);
-      border:1px solid var(--line);
-      border-radius:12px;
-      background:#0e1116;
+    .lightbox{
+      position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.85); z-index:9999;
     }
+    .lightbox img{ max-width:92vw; max-height:92vh; border-radius:12px }
   </style>
 </head>
 <body>
@@ -66,19 +72,19 @@
       <div>
         <div class="kicker">Project Overview</div>
         <p>As part of the <strong>USC Viterbi SHINE</strong> (Summer High School Intensive in Next-Generation Engineering) program, I conducted a research
-        project exploring how <strong>porous airfoil structures</strong> affect lift and drag.</p>
+          project exploring how <strong>porous airfoil structures</strong> affect lift and drag.</p>
         <ul class="list-tight">
           <li>Investigate whether introducing porous holes could <strong>reduce drag</strong> and <strong>increase lift</strong>.</li>
           <li>Improve overall <strong>aerodynamic efficiency</strong> for future aircraft designs.</li>
           <li>Produce non-dimensional results that <strong>scale to larger aerospace applications</strong>.</li>
         </ul>
       </div>
-      <figure class="media">
-        <a href="../images/projects/usc/airfoil-mounted.png" class="zoom" id="z1">
-          <img src="../images/projects/usc/airfoil-mounted.png" alt="Porous airfoil test piece mounted in the water channel." />
-        </a>
-        <figcaption>Porous airfoil model mounted in the USC water channel.</figcaption>
-      </figure>
+      <div>
+        <figure>
+          <img class="zoomable" src="../images/projects/usc/water-channel-camera.png" alt="Water channel and camera setup capturing flow around the model">
+          <figcaption>Water-channel and high-speed camera setup used during testing.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- Objectives & Design Parameters -->
@@ -97,12 +103,12 @@
         <p class="card"><strong>Formulas used.</strong> Lift coefficient <code class="eq">C<sub>L</sub></code> and drag coefficient
           <code class="eq">C<sub>D</sub></code> were computed using standard non-dimensional relationships so results generalize beyond the test scale.</p>
       </div>
-      <figure class="media">
-        <a href="../images/projects/usc/water-channel-camera.png" class="zoom" id="z2">
-          <img src="../images/projects/usc/water-channel-camera.png" alt="Water-channel test section and camera instrumentation." />
-        </a>
-        <figcaption>Water-channel test section with camera/instrumentation.</figcaption>
-      </figure>
+      <div>
+        <figure>
+          <img class="zoomable" src="../images/projects/usc/airfoil-mounted.png" alt="Porous airfoil model mounted in the water channel">
+          <figcaption>Porous NACA 0012 test article mounted in the channel.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- Methods & Tools -->
@@ -115,35 +121,14 @@
         Conducted physical tests in a <strong>water channel</strong>, using dye for separation visualization and a high-speed camera for velocity capture.</p>
       </div>
 
-      <div class="gallery" style="margin-top:14px;">
-        <figure class="media">
-          <a href="../images/projects/usc/curing-chamber.png" class="zoom" id="z3">
-            <img src="../images/projects/usc/curing-chamber.png" alt="Printed parts curing in chamber." />
-          </a>
-          <figcaption>Post-processing: printed parts curing.</figcaption>
-        </figure>
-
-        <figure class="media">
-          <a href="../images/projects/usc/laser-bench.png" class="zoom" id="z4">
-            <img src="../images/projects/usc/laser-bench.png" alt="Bench with laser and fixtures used during setup." />
-          </a>
-          <figcaption>Bench setup for optical/laser alignment and fixtures.</figcaption>
-        </figure>
-
-        <figure class="media">
-          <a href="../images/projects/usc/placing-airfoil.png" class="zoom" id="z5">
-            <img src="../images/projects/usc/placing-airfoil.png" alt="Placing the airfoil onto the sting mount in the water channel." />
-          </a>
-          <figcaption>Placing the airfoil on the sting mount.</figcaption>
-        </figure>
-
-        <figure class="media">
-          <a href="../images/projects/usc/data-stations.png" class="zoom" id="z6">
-            <img src="../images/projects/usc/data-stations.png" alt="Data capture and analysis stations." />
-          </a>
-          <figcaption>Data capture & analysis stations.</figcaption>
-        </figure>
-      </div>
+      <!-- still one figure in this section; inside it a 2-up collage -->
+      <figure style="margin-top:14px;">
+        <div class="two-up">
+          <img class="zoomable" src="../images/projects/usc/laser-bench.png" alt="Laser/optics bench used for setup and measurements">
+          <img class="zoomable" src="../images/projects/usc/data-stations.png" alt="Data stations with CFD post-processing and DAQ">
+        </div>
+        <figcaption>Left: optics/laser bench; Right: data/analysis stations.</figcaption>
+      </figure>
     </section>
 
     <!-- Results -->
@@ -151,22 +136,51 @@
       <div class="kicker">Results</div>
       <ul class="list-tight">
         <li><strong>Flow behavior:</strong> porous holes reduced flow separation in some cases, delaying stall.</li>
-        <li><strong>Lift/drag trends:</strong> at low AoA, porous configurations showed slightly reduced drag; at higher AoA, effects varied—some layouts improved the lift-to-drag ratio while others introduced additional turbulence.</li>
+        <li><strong>Lift/drag trends:</strong> at low AoA, porous configurations showed slightly reduced drag; at higher AoA, effects varied—
+          some layouts improved the lift-to-drag ratio while others introduced additional turbulence.</li>
         <li><strong>Velocity profiles:</strong> water-channel measurements aligned with simulations, showing smoother downstream flow with optimized spacing.</li>
       </ul>
+
+      <!-- again, keep single figure but show two photos inside for context -->
+      <figure style="margin-top:8px;">
+        <div class="two-up">
+          <img class="zoomable" src="../images/projects/usc/placing-airfoil.png" alt="Placing the airfoil model on the sting mount">
+          <img class="zoomable" src="../images/projects/usc/curing-chamber.png" alt="Curing/finishing parts prior to testing">
+        </div>
+        <figcaption>Model prep and placement steps supporting the final runs.</figcaption>
+      </figure>
     </section>
 
-    <!-- Poster -->
+    <!-- Skills & Techniques -->
+    <section>
+      <div class="kicker">Skills & Techniques Gained</div>
+      <p>
+        <span class="pill">Ansys CFD</span>
+        <span class="pill">MATLAB</span>
+        <span class="pill">SolidWorks</span>
+        <span class="pill">3D Printing</span>
+        <span class="pill">Water-Channel Testing</span>
+        <span class="pill">Dye Visualization</span>
+        <span class="pill">Data Analysis (C<sub>L</sub>, C<sub>D</sub>)</span>
+      </p>
+      <figure>
+        <img class="zoomable" src="../images/projects/usc/water-channel-camera.png" alt="Water-channel overview with camera and model">
+        <figcaption>Full test bay overview.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Poster (full-bleed, fills width; tall as viewport) -->
     <section class="poster">
       <div class="kicker">Full Poster</div>
-      <div class="poster-actions">
-        <a class="btn" href="../files/SHINE22-Agban-M-Poster-11-12.pdf" download>Download PDF</a>
-        <a class="btn outline" target="_blank" href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Open in new tab</a>
+      <div class="poster-toolbar">
+        <a href="../files/SHINE22-Agban-M-Poster-11-12.pdf" download>Download PDF</a>
+        <a target="_blank" href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Open in new tab</a>
       </div>
-      <!-- Fit-to-width so the page fills the frame -->
-      <iframe class="poster-frame"
-              src="../files/SHINE22-Agban-M-Poster-11-12.pdf#view=FitH&toolbar=1"
-              title="USC Porous Airfoil Poster"></iframe>
+      <div class="full-bleed">
+        <object data="../files/SHINE22-Agban-M-Poster-11-12.pdf#view=FitH" type="application/pdf">
+          <p>Can’t display the inline PDF. <a target="_blank" href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Open the poster</a>.</p>
+        </object>
+      </div>
     </section>
 
   </div>
@@ -176,24 +190,22 @@
   <div class="container">© <span id="y"></span> Mark Agban</div>
 </footer>
 
-<!-- Lightboxes -->
-<div id="lb1" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/airfoil-mounted.png" alt=""></div>
-<div id="lb2" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/water-channel-camera.png" alt=""></div>
-<div id="lb3" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/curing-chamber.png" alt=""></div>
-<div id="lb4" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/laser-bench.png" alt=""></div>
-<div id="lb5" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/placing-airfoil.png" alt=""></div>
-<div id="lb6" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/data-stations.png" alt=""></div>
-
+<!-- Lightbox -->
+<div class="lightbox" id="lb"><img alt=""></div>
 <script>
-  // year stamp
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  // connect thumbnail anchors to their lightboxes
-  [['z1','lb1'],['z2','lb2'],['z3','lb3'],['z4','lb4'],['z5','lb5'],['z6','lb6']]
-    .forEach(([thumb, box])=>{
-      const a = document.getElementById(thumb);
-      if (a) a.setAttribute('href', '#'+box);
-    });
+  // click-to-zoom
+  const lb = document.getElementById('lb');
+  const lbImg = lb.querySelector('img');
+  document.addEventListener('click', e=>{
+    const t = e.target;
+    if(t.classList && t.classList.contains('zoomable')){
+      lbImg.src = t.src; lb.style.display='grid';
+    } else if(e.target === lb){
+      lb.style.display='none'; lbImg.src='';
+    }
+  });
 </script>
 </body>
 </html>
