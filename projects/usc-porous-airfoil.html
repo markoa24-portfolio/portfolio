@@ -4,12 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Effects of Varying Porous Structures of an Airfoil — Mark Agban</title>
+
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    :root { --muted:#6b7280; --card:#0b0c0f08; --line:#1f29371a; }
+    :root{
+      --muted:#6b7280;
+      --card:#0b0c0f08;
+      --line:#1f29371a;
+    }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
     header a.brand { text-decoration:none; }
+
     .muted { color: var(--muted); }
     .kicker { text-transform: uppercase; letter-spacing:.08em; font-weight:700; font-size:.85rem; color:var(--muted); }
     .grid { display:grid; gap:1.25rem; }
@@ -18,18 +25,37 @@
     .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
     .list-tight li { margin:.25rem 0; }
 
-    figure{margin:14px 0}
-    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0d1117;cursor:zoom-in}
+    figure { margin:0; }
+    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0d1117;display:block}
     figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
-    .row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:800px){.row-2{grid-template-columns:1fr}}
+
+    .gallery-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width: 760px){ .gallery-2{grid-template-columns:1fr} }
 
     /* Lightbox */
-    .lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:9999}
-    .lb img{max-width:92vw;max-height:92vh;border-radius:12px}
+    .lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:90}
+    .lb img{max-width:92vw;max-height:90vh;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+    .lb.show{display:flex}
+    .lb:after{content:"×";position:fixed;top:10px;right:18px;font-size:32px;color:#fff;cursor:pointer}
+
+    /* Poster sizing + controls */
+    .poster iframe,
+    .poster object{
+      width:100%;
+      height:1200px;          /* make taller if you want */
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#0e1116;
+    }
+    .poster .controls{
+      display:flex; gap:10px; align-items:center;
+      margin:10px 0 12px;
+      flex-wrap:wrap;
+    }
   </style>
 </head>
 <body>
+
 <header class="site-header glass">
   <div class="container">
     <a class="brand" href="../index.html#projects">← Projects</a>
@@ -55,9 +81,9 @@
         </ul>
       </div>
       <div>
-        <figure>
-          <img src="../images/projects/usc/water-channel-camera.png" alt="Water-channel test bench and camera setup" data-zoom>
-          <figcaption>Water-channel test bench and high-speed camera used for experiments.</figcaption>
+        <figure class="zoom">
+          <img src="../images/projects/usc/water-channel-camera.png" alt="Water channel with high-speed camera">
+          <figcaption>Water-channel test bay with high-speed camera and optical access.</figcaption>
         </figure>
       </div>
     </section>
@@ -79,9 +105,9 @@
           <code class="eq">C<sub>D</sub></code> were computed using standard non-dimensional relationships so results generalize beyond the test scale.</p>
       </div>
       <div>
-        <figure>
-          <img src="../images/projects/usc/airfoil-mounted.png" alt="Porous NACA 0012 test article mounted in water channel" data-zoom>
-          <figcaption>Porous NACA 0012 article mounted between supports in the channel.</figcaption>
+        <figure class="zoom">
+          <img src="../images/projects/usc/airfoil-mounted.png" alt="Porous-hole placement on NACA 0012">
+          <figcaption>NACA 0012 test article with porous-hole pattern mounted to the sting.</figcaption>
         </figure>
       </div>
     </section>
@@ -95,11 +121,17 @@
         <p><strong>CAD & Experiments (SolidWorks + 3D Printing).</strong> Designed porous airfoils in SolidWorks; 3D-printed in two halves, then finished and assembled.
         Conducted physical tests in a <strong>water channel</strong>, using dye for separation visualization and a high-speed camera for velocity capture.</p>
       </div>
-      <figure class="row-2" style="margin-top:14px;">
-        <img src="../images/projects/usc/curing-chamber.png" alt="3D-printed airfoil curing" data-zoom>
-        <img src="../images/projects/usc/laser-bench.png" alt="Bench and optics used around the channel" data-zoom>
-        <figcaption>Left: 3D-printed components curing. Right: bench/optics around the water-channel test area.</figcaption>
-      </figure>
+
+      <div class="gallery-2" style="margin-top:14px;">
+        <figure class="zoom">
+          <img src="../images/projects/usc/laser-bench.png" alt="Optics / laser bench used in the lab">
+          <figcaption>Lab bench and optics hardware used during setup and calibration.</figcaption>
+        </figure>
+        <figure class="zoom">
+          <img src="../images/projects/usc/placing-airfoil.png" alt="Placing the porous airfoil in the channel">
+          <figcaption>Placing the porous-airfoil assembly into the water channel for testing.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- Results -->
@@ -111,10 +143,17 @@
           some layouts improved the lift-to-drag ratio while others introduced additional turbulence.</li>
         <li><strong>Velocity profiles:</strong> water-channel measurements aligned with simulations, showing smoother downstream flow with optimized spacing.</li>
       </ul>
-      <figure style="margin-top:8px;">
-        <img src="../images/projects/usc/data-stations.png" alt="Analysis stations with velocity-field plots and CAD" data-zoom>
-        <figcaption>Analysis stations: simulation/plotting displays alongside CAD during testing.</figcaption>
-      </figure>
+
+      <div class="gallery-2" style="margin-top:8px;">
+        <figure class="zoom">
+          <img src="../images/projects/usc/data-stations.png" alt="Data and processing stations">
+          <figcaption>Data-acquisition and post-processing stations used to analyze <em>C<sub>L</sub></em> and <em>C<sub>D</sub></em>.</figcaption>
+        </figure>
+        <figure class="zoom">
+          <img src="../images/projects/usc/curing-chamber.png" alt="Curing/finishing of printed parts">
+          <figcaption>Printed components during curing/finishing prior to assembly and testing.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- Skills & Techniques -->
@@ -129,18 +168,37 @@
         <span class="pill">Dye Visualization</span>
         <span class="pill">Data Analysis (C<sub>L</sub>, C<sub>D</sub>)</span>
       </p>
-      <figure>
-        <img src="../images/projects/usc/placing-airfoil.png" alt="Placing test article in the channel" data-zoom>
-        <figcaption>Installing the porous-airfoil test article into the channel for a new run.</figcaption>
-      </figure>
+
+      <div class="gallery-2">
+        <figure class="zoom">
+          <img src="../images/projects/usc/water-channel-camera.png" alt="Channel & camera overview">
+          <figcaption>Channel + camera overview used for repeatable runs.</figcaption>
+        </figure>
+        <figure class="zoom">
+          <img src="../images/projects/usc/airfoil-mounted.png" alt="Airfoil mounting details">
+          <figcaption>Mounting details for the porous-hole test article.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- Poster -->
     <section class="poster">
       <div class="kicker">Full Poster</div>
-      <object data="../files/SHINE22-Agban-M-Poster-11-12.pdf" type="application/pdf">
-        <p>Can't display the inline PDF? <a href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Download the poster</a>.</p>
-      </object>
+
+      <div class="controls">
+        <a class="btn outline" href="../files/SHINE22-Agban-M-Poster-11-12.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        <a class="btn" href="../files/SHINE22-Agban-M-Poster-11-12.pdf" download>Download PDF</a>
+        <button class="btn outline" id="posterFS" type="button">Fullscreen</button>
+      </div>
+
+      <div id="posterWrap">
+        <iframe
+          id="posterFrame"
+          src="../files/SHINE22-Agban-M-Poster-11-12.pdf#toolbar=1&navpanes=1&view=FitH"
+          title="Poster PDF"
+          allow="fullscreen"
+        ></iframe>
+      </div>
     </section>
 
   </div>
@@ -150,17 +208,42 @@
   <div class="container">© <span id="y"></span> Mark Agban</div>
 </footer>
 
-<!-- Lightbox -->
+<!-- Lightbox overlay -->
 <div class="lb" id="lb"><img alt=""></div>
+
 <script>
+  // year stamp
   document.getElementById('y').textContent = new Date().getFullYear();
 
+  // Lightbox for images
   const lb = document.getElementById('lb');
   const lbImg = lb.querySelector('img');
-  document.querySelectorAll('img[data-zoom]').forEach(img=>{
-    img.addEventListener('click', ()=>{ lbImg.src = img.src; lb.style.display='flex'; });
+  document.querySelectorAll('figure.zoom img').forEach(img=>{
+    img.style.cursor='zoom-in';
+    img.addEventListener('click',()=>{
+      lbImg.src = img.src;
+      lb.classList.add('show');
+    });
   });
-  lb.addEventListener('click', ()=>{ lb.style.display='none'; lbImg.src=''; });
+  lb.addEventListener('click', ()=> lb.classList.remove('show'));
+
+  // PDF fullscreen toggle
+  const posterFSBtn = document.getElementById('posterFS');
+  const posterWrap  = document.getElementById('posterWrap');
+  posterFSBtn?.addEventListener('click', async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await posterWrap.requestFullscreen();
+        posterFSBtn.textContent = 'Exit Fullscreen';
+      } else {
+        await document.exitFullscreen();
+        posterFSBtn.textContent = 'Fullscreen';
+      }
+    } catch (e) {
+      // fallback
+      window.open('../files/SHINE22-Agban-M-Poster-11-12.pdf', '_blank');
+    }
+  });
 </script>
 </body>
 </html>
