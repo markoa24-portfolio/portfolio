@@ -18,7 +18,7 @@
     .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
     .list-tight li { margin:.25rem 0; }
 
-    /* image cards + captions */
+    /* Images */
     figure { margin:0; }
     .media { border:1px solid var(--line); border-radius:12px; background:#0e1116; padding:8px; }
     .media img { width:100%; height:auto; border-radius:8px; display:block; }
@@ -27,26 +27,21 @@
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     @media (max-width: 820px){ .gallery{grid-template-columns:1fr} }
 
-    /* simple lightbox (same vibe as GHPR) */
+    /* Lightbox */
     .zoom { cursor:zoom-in; }
-    .lightbox {
-      position: fixed; inset:0; background:rgba(0,0,0,.9);
-      display:none; align-items:center; justify-content:center; z-index:9999;
-      padding: 24px;
-    }
+    .lightbox { position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+                background:rgba(0,0,0,.9); z-index:9999; padding:24px; }
     .lightbox img{max-width:min(96vw,1400px);max-height:92vh;border-radius:12px}
     .lightbox:target{display:flex}
-    .lightbox a.close{
-      position:absolute; top:14px; right:16px; color:#fff; font-size:28px; text-decoration:none;
-      background:rgba(255,255,255,.12); border-radius:10px; padding:2px 10px;
-    }
+    .lightbox a.close{position:absolute; top:14px; right:16px; color:#fff; font-size:28px; text-decoration:none;
+                      background:rgba(255,255,255,.12); border-radius:10px; padding:2px 10px;}
 
-    /* Poster viewer */
+    /* Poster viewer: tall & fit-to-width */
     .poster-actions { display:flex; gap:.5rem; margin:.5rem 0 .75rem; flex-wrap:wrap; }
     .poster-actions .btn { text-decoration:none; }
     .poster-frame{
       width:100%;
-      height: min(1200px, 88vh);   /* tall, but responsive */
+      height: clamp(760px, 88vh, 1400px);
       border:1px solid var(--line);
       border-radius:12px;
       background:#0e1116;
@@ -78,12 +73,12 @@
           <li>Produce non-dimensional results that <strong>scale to larger aerospace applications</strong>.</li>
         </ul>
       </div>
-      <div class="media">
-        <a href="../images/projects/usc/airfoil-mounted.png" class="zoom" aria-label="zoom image" id="z1">
+      <figure class="media">
+        <a href="../images/projects/usc/airfoil-mounted.png" class="zoom" id="z1">
           <img src="../images/projects/usc/airfoil-mounted.png" alt="Porous airfoil test piece mounted in the water channel." />
         </a>
         <figcaption>Porous airfoil model mounted in the USC water channel.</figcaption>
-      </div>
+      </figure>
     </section>
 
     <!-- Objectives & Design Parameters -->
@@ -106,7 +101,7 @@
         <a href="../images/projects/usc/water-channel-camera.png" class="zoom" id="z2">
           <img src="../images/projects/usc/water-channel-camera.png" alt="Water-channel test section and camera instrumentation." />
         </a>
-        <figcaption>Water-channel test section with camera/instrumentation aligned on the test article.</figcaption>
+        <figcaption>Water-channel test section with camera/instrumentation.</figcaption>
       </figure>
     </section>
 
@@ -139,14 +134,14 @@
           <a href="../images/projects/usc/placing-airfoil.png" class="zoom" id="z5">
             <img src="../images/projects/usc/placing-airfoil.png" alt="Placing the airfoil onto the sting mount in the water channel." />
           </a>
-          <figcaption>Placing the airfoil on the sting mount in the channel.</figcaption>
+          <figcaption>Placing the airfoil on the sting mount.</figcaption>
         </figure>
 
         <figure class="media">
           <a href="../images/projects/usc/data-stations.png" class="zoom" id="z6">
-            <img src="../images/projects/usc/data-stations.png" alt="Data capture and analysis stations showing simulations and measurements." />
+            <img src="../images/projects/usc/data-stations.png" alt="Data capture and analysis stations." />
           </a>
-          <figcaption>Data capture & analysis stations (simulation + measurement).</figcaption>
+          <figcaption>Data capture & analysis stations.</figcaption>
         </figure>
       </div>
     </section>
@@ -165,12 +160,12 @@
     <section class="poster">
       <div class="kicker">Full Poster</div>
       <div class="poster-actions">
-        <a class="btn outline" target="_blank" href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Open in new tab</a>
         <a class="btn" href="../files/SHINE22-Agban-M-Poster-11-12.pdf" download>Download PDF</a>
+        <a class="btn outline" target="_blank" href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Open in new tab</a>
       </div>
-      <!-- Fit-to-width so there isn't a tiny poster with huge gray gutters -->
+      <!-- Fit-to-width so the page fills the frame -->
       <iframe class="poster-frame"
-              src="../files/SHINE22-Agban-M-Poster-11-12.pdf#zoom=page-width"
+              src="../files/SHINE22-Agban-M-Poster-11-12.pdf#view=FitH&toolbar=1"
               title="USC Porous Airfoil Poster"></iframe>
     </section>
 
@@ -181,7 +176,7 @@
   <div class="container">© <span id="y"></span> Mark Agban</div>
 </footer>
 
-<!-- lightboxes (one per image; :target opens them) -->
+<!-- Lightboxes -->
 <div id="lb1" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/airfoil-mounted.png" alt=""></div>
 <div id="lb2" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/water-channel-camera.png" alt=""></div>
 <div id="lb3" class="lightbox"><a class="close" href="#"></a><img src="../images/projects/usc/curing-chamber.png" alt=""></div>
@@ -193,13 +188,12 @@
   // year stamp
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  // turn every .zoom link into a :target lightbox without JS wiring
-  // link ids (#z1, #z2, …) pair to #lb1, #lb2, …
-  const pairs = [['z1','lb1'],['z2','lb2'],['z3','lb3'],['z4','lb4'],['z5','lb5'],['z6','lb6']];
-  pairs.forEach(([thumbId, boxId])=>{
-    const el = document.getElementById(thumbId);
-    if (el) el.setAttribute('href', '#'+boxId);
-  });
+  // connect thumbnail anchors to their lightboxes
+  [['z1','lb1'],['z2','lb2'],['z3','lb3'],['z4','lb4'],['z5','lb5'],['z6','lb6']]
+    .forEach(([thumb, box])=>{
+      const a = document.getElementById(thumb);
+      if (a) a.setAttribute('href', '#'+box);
+    });
 </script>
 </body>
 </html>
