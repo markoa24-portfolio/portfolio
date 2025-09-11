@@ -7,28 +7,27 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* Local helpers in case the global stylesheet is minimal */
-    :root { --muted:#6b7280; --card:#0b0c0f08; }
+    :root { --muted:#6b7280; --card:#0b0c0f08; --line:#1f29371a; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
     header a.brand { text-decoration:none; }
     .muted { color: var(--muted); }
     .kicker { text-transform: uppercase; letter-spacing:.08em; font-weight:700; font-size:.85rem; color:var(--muted); }
     .grid { display:grid; gap:1.25rem; }
-    @media (min-width: 900px){
-      .grid-2 { grid-template-columns: 1.1fr .9fr; }
-    }
+    @media (min-width: 900px){ .grid-2 { grid-template-columns: 1.1fr .9fr; } }
     section { margin: 40px 0; }
     .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
     .list-tight li { margin:.25rem 0; }
-    figure.placeholder {
-      border: 1.5px dashed #a3a3a3; border-radius: 12px;
-      padding: 18px; display:flex; align-items:center; justify-content:center;
-      min-height: 190px; background:#fafafa; color:#6b7280; text-align:center;
-    }
-    figure.placeholder figcaption { margin-top:.5rem; font-size:.9rem; color:var(--muted); }
-    code.eq { background:#f8fafc; border-radius:8px; padding:.2rem .45rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-    .pill { display:inline-block; padding:.15rem .6rem; border-radius:999px; background:#eef2ff; color:#3730a3; font-weight:600; font-size:.8rem; margin:.125rem .25rem .125rem 0; }
-    .poster object { width:100%; height: 920px; border:none; }
+
+    /* Figure / image styling + optional 2-up row */
+    figure { margin:14px 0; }
+    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#0d1117; cursor: zoom-in;}
+    figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
+    .row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:800px){.row-2{grid-template-columns:1fr}}
+
+    /* Lightbox */
+    .lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:9999}
+    .lb img{max-width:92vw;max-height:92vh;border-radius:12px}
   </style>
 </head>
 <body>
@@ -57,8 +56,9 @@
         </ul>
       </div>
       <div>
-        <figure class="placeholder">
-          <div>Placeholder: Poster overview photo or lab setup with water channel</div>
+        <figure>
+          <img src="../images/projects/usc/water-channel-camera.jpg" alt="Water-channel test bench and camera setup" data-zoom>
+          <figcaption>Water-channel test bench and high-speed camera used for experiments.</figcaption>
         </figure>
       </div>
     </section>
@@ -80,8 +80,9 @@
           <code class="eq">C<sub>D</sub></code> were computed using standard non-dimensional relationships so results generalize beyond the test scale.</p>
       </div>
       <div>
-        <figure class="placeholder">
-          <div>Placeholder: Diagram of NACA 0012 with porous-hole placement and spacing labels</div>
+        <figure>
+          <img src="../images/projects/usc/airfoil-mounted.jpg" alt="Porous NACA 0012 test article mounted in water channel" data-zoom>
+          <figcaption>Porous NACA 0012 article mounted between supports in the channel.</figcaption>
         </figure>
       </div>
     </section>
@@ -95,8 +96,10 @@
         <p><strong>CAD & Experiments (SolidWorks + 3D Printing).</strong> Designed porous airfoils in SolidWorks; 3D-printed in two halves, then finished and assembled.
         Conducted physical tests in a <strong>water channel</strong>, using dye for separation visualization and a high-speed camera for velocity capture.</p>
       </div>
-      <figure class="placeholder" style="margin-top:14px;">
-        <div>Placeholder: CAD render of porous airfoil and photo of water-channel test setup</div>
+      <figure class="row-2" style="margin-top:14px;">
+        <img src="../images/projects/usc/curing-chamber.jpg" alt="3D-printed airfoil curing" data-zoom>
+        <img src="../images/projects/usc/laser-bench.jpg" alt="Bench and optics used around the channel" data-zoom>
+        <figcaption>Left: 3D-printed components curing. Right: bench/optics around the water-channel test area.</figcaption>
       </figure>
     </section>
 
@@ -109,8 +112,9 @@
           some layouts improved the lift-to-drag ratio while others introduced additional turbulence.</li>
         <li><strong>Velocity profiles:</strong> water-channel measurements aligned with simulations, showing smoother downstream flow with optimized spacing.</li>
       </ul>
-      <figure class="placeholder" style="margin-top:8px;">
-        <div>Placeholder: Graph of lift/drag vs AoA and water-channel image set</div>
+      <figure style="margin-top:8px;">
+        <img src="../images/projects/usc/data-stations.jpg" alt="Analysis stations with velocity-field plots and CAD" data-zoom>
+        <figcaption>Analysis stations: simulation/plotting displays alongside CAD during testing.</figcaption>
       </figure>
     </section>
 
@@ -126,8 +130,9 @@
         <span class="pill">Dye Visualization</span>
         <span class="pill">Data Analysis (C<sub>L</sub>, C<sub>D</sub>)</span>
       </p>
-      <figure class="placeholder">
-        <div>Placeholder: Collage of simulation screenshots and lab photos</div>
+      <figure>
+        <img src="../images/projects/usc/placing-airfoil.jpg" alt="Placing test article in the channel" data-zoom>
+        <figcaption>Installing the porous-airfoil test article into the channel for a new run.</figcaption>
       </figure>
     </section>
 
@@ -145,9 +150,18 @@
 <footer class="site-footer">
   <div class="container">© <span id="y"></span> Mark Agban</div>
 </footer>
+
+<!-- Lightbox -->
+<div class="lb" id="lb"><img alt=""></div>
 <script>
-  // year stamp
   document.getElementById('y').textContent = new Date().getFullYear();
+
+  const lb = document.getElementById('lb');
+  const lbImg = lb.querySelector('img');
+  document.querySelectorAll('img[data-zoom]').forEach(img=>{
+    img.addEventListener('click', ()=>{ lbImg.src = img.src; lb.style.display='flex'; });
+  });
+  lb.addEventListener('click', ()=>{ lb.style.display='none'; lbImg.src=''; });
 </script>
 </body>
 </html>
