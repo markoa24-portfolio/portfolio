@@ -18,40 +18,25 @@
     .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
     .list-tight li { margin:.25rem 0; }
 
-    /* Figures */
     figure { margin:0; }
     figure img{
       width:100%; height:auto; border-radius:12px;
-      border:1px solid var(--line); background:#0d1117; cursor: zoom-in;
-      display:block;
+      border:1px solid var(--line); background:#0d1117; cursor: zoom-in; display:block;
     }
     figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
 
-    /* Poster block */
     .poster-head{display:flex;gap:.5rem;align-items:center;margin:.5rem 0}
     .poster-head a{font-size:.9rem}
-    .pdf-frame{
-      width:100%;
-      height:82vh;              /* a bit smaller than before */
-      border:none;
-      display:block;
-      background:#0d1117;
-      border-radius:12px;
-      border:1px solid var(--line);
-    }
+    .pdf-frame{ width:100%; height:82vh; border:none; display:block; background:#0d1117;
+      border-radius:12px; border:1px solid var(--line); }
 
     /* Lightbox */
-    .lightbox{
-      position:fixed; inset:0; background:rgba(0,0,0,.88);
-      display:none; align-items:center; justify-content:center; z-index:9999;
-      padding:28px;
-    }
+    .lightbox{ position:fixed; inset:0; background:rgba(0,0,0,.88); display:none;
+      align-items:center; justify-content:center; z-index:9999; padding:28px; }
     .lightbox.open{display:flex}
     .lightbox img{max-width:96vw; max-height:92vh; border-radius:14px}
-    .lightbox .close{
-      position:fixed; top:16px; right:18px; font-size:28px; line-height:1;
-      color:#fff; cursor:pointer; user-select:none
-    }
+    .lightbox .close{ position:fixed; top:16px; right:18px; font-size:28px; line-height:1;
+      color:#fff; cursor:pointer; user-select:none }
   </style>
 </head>
 <body>
@@ -82,7 +67,11 @@
       </div>
       <div>
         <figure>
-          <img src="../images/projects/usc/water-channel-camera.png" alt="Water channel and camera capturing flow">
+          <img
+            src="../images/projects/usc/water-channel-camera.png"
+            alt="Water channel and camera capturing flow"
+            data-fallback="../images/projects/usc/water-channel-camera.png, ../../images/projects/usc/water-channel-camera.png, ./images/projects/usc/water-channel-camera.png, images/projects/usc/water-channel-camera.png"
+          />
           <figcaption>Water-channel and high-speed camera setup used during testing.</figcaption>
         </figure>
       </div>
@@ -106,7 +95,11 @@
       </div>
       <div>
         <figure>
-          <img src="../images/projects/usc/airfoil-mounted.png" alt="Porous airfoil mounted in channel">
+          <img
+            src="../images/projects/usc/airfoil-mounted.png"
+            alt="Porous airfoil mounted in channel"
+            data-fallback="../images/projects/usc/airfoil-mounted.png, ../../images/projects/usc/airfoil-mounted.png, ./images/projects/usc/airfoil-mounted.png, images/projects/usc/airfoil-mounted.png"
+          />
           <figcaption>Porous NACA 0012 test article mounted in the channel.</figcaption>
         </figure>
       </div>
@@ -122,7 +115,11 @@
         Conducted physical tests in a <strong>water channel</strong>, using dye for separation visualization and a high-speed camera for velocity capture.</p>
       </div>
       <figure style="margin-top:14px">
-        <img src="../images/projects/usc/laser-bench.png" alt="Laser bench / illumination setup">
+        <img
+          src="../images/projects/usc/laser-bench.png"
+          alt="Laser bench / illumination setup"
+          data-fallback="../images/projects/usc/laser-bench.png, ../../images/projects/usc/laser-bench.png, ./images/projects/usc/laser-bench.png, images/projects/usc/laser-bench.png"
+        />
         <figcaption>Lab bench / illumination setup used for visualization and alignment.</figcaption>
       </figure>
     </section>
@@ -136,7 +133,11 @@
         <li><strong>Velocity profiles:</strong> water-channel measurements aligned with simulations, showing smoother downstream flow with optimized spacing.</li>
       </ul>
       <figure style="margin-top:8px">
-        <img src="../images/projects/usc/data-stations.png" alt="Data stations and results">
+        <img
+          src="../images/projects/usc/data-stations.png"
+          alt="Data stations and results"
+          data-fallback="../images/projects/usc/data-stations.png, ../../images/projects/usc/data-stations.png, ./images/projects/usc/data-stations.png, images/projects/usc/data-stations.png"
+        />
         <figcaption>Data stations used during testing and analysis.</figcaption>
       </figure>
     </section>
@@ -154,7 +155,11 @@
         <span class="pill">Data Analysis (C<sub>L</sub>, C<sub>D</sub>)</span>
       </p>
       <figure>
-        <img src="../images/projects/usc/placing-airfoil.png" alt="Placing airfoil into channel">
+        <img
+          src="../images/projects/usc/placing-airfoil.png"
+          alt="Placing airfoil into channel"
+          data-fallback="../images/projects/usc/placing-airfoil.png, ../../images/projects/usc/placing-airfoil.png, ./images/projects/usc/placing-airfoil.png, images/projects/usc/placing-airfoil.png"
+        />
         <figcaption>Placing the instrumented airfoil into the water channel.</figcaption>
       </figure>
     </section>
@@ -166,7 +171,6 @@
         <a class="btn outline" href="../files/SHINE22-Agban-M-Poster-11-12.pdf" download>Download PDF</a>
         <a class="btn outline" target="_blank" href="../files/SHINE22-Agban-M-Poster-11-12.pdf">Open in new tab</a>
       </div>
-      <!-- Fit the width, slightly smaller height to avoid big gray margins -->
       <iframe
         class="pdf-frame"
         src="../files/SHINE22-Agban-M-Poster-11-12.pdf#view=FitH"
@@ -194,11 +198,10 @@
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Simple lightbox
+  // Lightbox
   const lb = document.getElementById('lb');
   const lbImg = document.getElementById('lbImg');
   const lbClose = document.getElementById('lbClose');
-
   document.querySelectorAll('figure img').forEach(img=>{
     img.addEventListener('click', ()=>{
       lbImg.src = img.src;
@@ -209,6 +212,19 @@
   lb.addEventListener('click', e=>{ if(e.target===lb) lb.classList.remove('open'); });
   lbClose.addEventListener('click', ()=> lb.classList.remove('open'));
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+
+  // Image path fallbacks if the page is nested differently
+  document.querySelectorAll('img[data-fallback]').forEach(img=>{
+    const candidates = img.dataset.fallback.split(',').map(s=>s.trim());
+    let i = 0;
+    img.addEventListener('error', function onErr(){
+      if (++i < candidates.length){
+        img.src = candidates[i];
+      } else {
+        img.removeEventListener('error', onErr);
+      }
+    });
+  });
 </script>
 </body>
 </html>
