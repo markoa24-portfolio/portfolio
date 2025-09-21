@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Haas — Experience Detail</title>
-  <meta name="description" content="Case study page for Haas role." />
+  <title>Haas Automation — Mechanical Engineering Intern</title>
+  <meta name="description" content="Mechanical Engineering Intern at Haas Automation: HID-controlled access system design, rapid prototyping, validation, and cross-functional collaboration." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <style>
+    /* Match site visual language: kickers, cards, placeholders */
     :root { --muted:#6b7280; --card:#0b0c0f08; --line:#1f29371a; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
     header a.brand { text-decoration:none; }
@@ -21,11 +22,13 @@
     @media (min-width: 900px){ .grid-2 { grid-template-columns: 1.1fr .9fr; } }
     .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
     .list-tight li { margin:.25rem 0; }
+    figure{margin:14px 0}
+    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
     .placeholder{border:1.5px dashed #a3a3a3;border-radius:12px;min-height:180px;background:#fafafa;color:#6b7280;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px}
-    .pill{display:inline-block;padding:.15rem .6rem;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:600;font-size:.8rem;margin:.125rem .25rem}
   </style>
 </head>
 <body>
+
 <header class="site-header glass">
   <div class="container">
     <a class="brand" href="../index.html#experience">← Experience</a>
@@ -39,47 +42,70 @@
 </header>
 
 <main>
+
+  <!-- HERO -->
   <section class="section hero-tight">
     <div class="container">
-      <h1>Haas — [Your Title]</h1>
-      <p class="muted">Detailed responsibilities, selected projects, and outcomes from your role at Haas.</p>
-      <div class="placeholder" style="margin-top:12px">Photo: machine cell, fixture, or project (non-sensitive)</div>
+      <h1>Haas Automation — Mechanical Engineering Intern</h1>
+      <p class="muted">Summer 2024</p>
+
+      <figure style="margin-top:12px">
+        <img class="zoom"
+             src="haas-access-system.png"
+             alt="Prototype HID access control assembly with solenoid lock and custom bracketry (logos redacted)" />
+        <figcaption>Prototype HID access control assembly integrated on a machine enclosure (logos redacted).</figcaption>
+      </figure>
     </div>
   </section>
 
+  <!-- CONTENT -->
   <section class="section">
     <div class="container">
-      <div class="grid grid-2">
-        <div>
-          <div class="kicker">Role scope</div>
-          <div class="card">
-            <ul class="list-tight">
-              <li>Placeholder bullet (replace with your actual scope).</li>
-              <li>Placeholder bullet.</li>
-              <li>Placeholder bullet.</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div class="kicker">Environment & tools</div>
-          <div class="card">
-            <p>
-              <span class="pill">CNC</span><span class="pill">GD&T</span><span class="pill">Lean</span>
-              <span class="pill">Excel</span><span class="pill">Python/MATLAB</span>
-            </p>
-            <div class="placeholder">Artifacts placeholder</div>
-          </div>
-        </div>
+
+      <div class="kicker">Overview</div>
+      <div class="card">
+        <p>In Summer 2024, I worked as a <strong>Mechanical Engineering Intern</strong> at Haas Automation, the world’s largest builder of CNC machine tools. My role centered on <strong>designing, prototyping, and implementing an HID-controlled access system</strong> to secure high-end machines, while contributing to manufacturing efficiency and quality validation.</p>
       </div>
 
-      <div class="kicker" style="margin-top:28px;">Selected work</div>
+      <div class="kicker" style="margin-top:28px;">Key Contributions</div>
+
+      <h3 style="margin:.5rem 0 0 0;">Access Control System Design</h3>
       <div class="card">
-        <p>Add 2–3 mini case studies here (problem → action → result). We’ll fill this after.</p>
+        <ul class="list-tight">
+          <li>Designed and implemented an <strong>HID card-activated solenoid locking mechanism</strong> to control machine access.</li>
+          <li>Integrated electrical components (<strong>Arduino</strong>, HID scanner, relay, solenoid) with custom brackets and a lock extension bar.</li>
+          <li>Modeled parts in <strong>SolidWorks</strong> and used in-house <strong>3D printing, plasma cutting, and bandsaw machining</strong> to prototype and assemble.</li>
+        </ul>
+      </div>
+
+      <h3 style="margin:.5rem 0 0 0;">Manufacturing Support &amp; Efficiency</h3>
+      <div class="card">
+        <ul class="list-tight">
+          <li>Enhanced <strong>machine safety and usability</strong> by designing components that prevent unauthorized operation without disrupting workflows.</li>
+          <li>Iterated designs with machinists and technicians to ensure <strong>fit, manufacturability, and serviceability</strong> within existing enclosures.</li>
+        </ul>
+      </div>
+
+      <h3 style="margin:.5rem 0 0 0;">Inspection &amp; Validation</h3>
+      <div class="card">
+        <ul class="list-tight">
+          <li>Performed <strong>dimensional inspections</strong> of fixtures and manufactured components against engineering drawings.</li>
+          <li>Documented discrepancies, coordinated with engineers, and verified that redesigns met <strong>tolerance and quality</strong> requirements.</li>
+        </ul>
+      </div>
+
+      <h3 style="margin:.5rem 0 0 0;">Cross-Functional Collaboration</h3>
+      <div class="card">
+        <ul class="list-tight">
+          <li>Partnered with engineers, machinists, and technicians to integrate <strong>mechanical and electrical subsystems</strong> into a functional prototype.</li>
+          <li>Presented updates and <strong>design trade-offs</strong> to engineering leadership, outlining a path for broader deployment across Haas equipment.</li>
+        </ul>
       </div>
 
       <p style="margin-top:16px;"><a class="btn outline" href="../index.html#experience">← Back to experience</a></p>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
@@ -88,4 +114,3 @@
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
