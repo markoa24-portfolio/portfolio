@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UCLA — Experience Detail</title>
-  <meta name="description" content="Case study page for UCLA role." />
+  <title>UCLA DCP — Lead Accessibility Engineer</title>
+  <meta name="description" content="Lead Accessibility Engineer at UCLA Disabilities & Computing Program (DCP): PDF remediation, WCAG/508 compliance, training, and workflow improvements." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -21,11 +21,13 @@
     @media (min-width: 900px){ .grid-2 { grid-template-columns: 1.1fr .9fr; } }
     .card { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; }
     .list-tight li { margin:.25rem 0; }
+    figure{margin:14px 0}
+    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
     .placeholder{border:1.5px dashed #a3a3a3;border-radius:12px;min-height:180px;background:#fafafa;color:#6b7280;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px}
-    .pill{display:inline-block;padding:.15rem .6rem;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:600;font-size:.8rem;margin:.125rem .25rem}
   </style>
 </head>
 <body>
+
 <header class="site-header glass">
   <div class="container">
     <a class="brand" href="../index.html#experience">← Experience</a>
@@ -39,47 +41,69 @@
 </header>
 
 <main>
+
+  <!-- HERO -->
   <section class="section hero-tight">
     <div class="container">
-      <h1>UCLA — [Your Title]</h1>
-      <p class="muted">Detailed responsibilities, selected projects, and outcomes from your role at UCLA.</p>
-      <div class="placeholder" style="margin-top:12px">Photo: lab or project (non-sensitive)</div>
+      <h1>UCLA DCP — Lead Accessibility Engineer</h1>
+      <p class="muted">2024 – Present</p>
+
+      <figure style="margin-top:12px">
+        <img class="zoom"
+             src="ucla-dcp.png"
+             alt="Accessibility remediation workflow in Adobe Acrobat for a UCLA PDF" />
+        <figcaption>Accessibility remediation workflow for campus PDFs (illustrative).</figcaption>
+      </figure>
     </div>
   </section>
 
+  <!-- CONTENT -->
   <section class="section">
     <div class="container">
-      <div class="grid grid-2">
-        <div>
-          <div class="kicker">Role scope</div>
-          <div class="card">
-            <ul class="list-tight">
-              <li>Placeholder bullet (replace with your actual scope).</li>
-              <li>Placeholder bullet.</li>
-              <li>Placeholder bullet.</li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div class="kicker">Environment & tools</div>
-          <div class="card">
-            <p>
-              <span class="pill">SolidWorks</span><span class="pill">MATLAB</span><span class="pill">Python</span>
-              <span class="pill">Test & Measurement</span><span class="pill">Documentation</span>
-            </p>
-            <div class="placeholder">Artifacts placeholder</div>
-          </div>
-        </div>
+
+      <div class="kicker">Overview</div>
+      <div class="card">
+        <p>Since 2024, I’ve served as a <strong>Lead Accessibility Engineer</strong> with UCLA’s <strong>Disabilities &amp; Computing Program (DCP)</strong> under the University Web Accessibility Initiative (UWAI). I ensure campus PDFs and digital documents are accessible and compliant with <strong>WCAG</strong> and <strong>Section 508</strong>, improving structure, readability, and screen-reader usability.</p>
       </div>
 
-      <div class="kicker" style="margin-top:28px;">Selected work</div>
+      <div class="kicker" style="margin-top:28px;">Key Contributions</div>
+
+      <h3 style="margin:.5rem 0 0 0;">Document Accessibility &amp; Remediation</h3>
       <div class="card">
-        <p>Add 2–3 mini case studies here (problem → action → result). We’ll fill this after.</p>
+        <ul class="list-tight">
+          <li>Remediated complex PDFs (reports, forms, slide decks) with correct <strong>heading hierarchy, reading order, lists, tables,</strong> and <strong>link semantics</strong>.</li>
+          <li>Authored clear, descriptive <strong>alt text</strong> for charts, multi-image figures, and data-dense visuals used in technical content.</li>
+        </ul>
+      </div>
+
+      <h3 style="margin:.5rem 0 0 0;">Standards &amp; Compliance</h3>
+      <div class="card">
+        <ul class="list-tight">
+          <li>Applied <strong>WCAG 2.x</strong> and <strong>Section 508</strong> requirements; validated tag trees, tab order, language metadata, and related checks.</li>
+          <li>Created concise <strong>checklists</strong> for headings, alt text, tables, and reading order to standardize remediation quality.</li>
+        </ul>
+      </div>
+
+      <h3 style="margin:.5rem 0 0 0;">Consultation &amp; Training</h3>
+      <div class="card">
+        <ul class="list-tight">
+          <li>Delivered <strong>1:1 consultations and small-group trainings</strong> for faculty/staff covering Acrobat workflows and accessible authoring practices.</li>
+          <li>Produced <strong>guides and training snippets</strong> for UWAI partners (e.g., grouping images, describing data visuals, exporting cleaner source PDFs).</li>
+        </ul>
+      </div>
+
+      <h3 style="margin:.5rem 0 0 0;">Process &amp; Impact</h3>
+      <div class="card">
+        <ul class="list-tight">
+          <li>Established a repeatable workflow: auto-tag → heading audit → reading order → alt text → tables/lists → metadata/lang → final PAC checks.</li>
+          <li>Collaborated with departments and UWAI leadership to <strong>prioritize high-impact documents</strong>, improving accessibility scores across syllabi, policy docs, and training decks.</li>
+        </ul>
       </div>
 
       <p style="margin-top:16px;"><a class="btn outline" href="../index.html#experience">← Back to experience</a></p>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
@@ -88,4 +112,3 @@
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
